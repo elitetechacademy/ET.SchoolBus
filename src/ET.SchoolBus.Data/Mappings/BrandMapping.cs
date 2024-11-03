@@ -17,12 +17,7 @@ public class BrandMapping : BaseMapping<Brand>
         builder.Property(x => x.BrandName).HasColumnType("nvarchar(30)")
             .HasColumnName("BrandName")
             .HasColumnOrder(2);
-
-        // builder.HasMany(x => x.Models)
-        //     .WithOne(x => x.Brand)
-        //     .HasForeignKey(x => x.BrandId)
-        //     .OnDelete(DeleteBehavior.NoAction);
-
+            
         builder.ToTable("Brands");
     }
 }

@@ -15,4 +15,5 @@ public class School : BaseEntity
     public ICollection<School> Schools { get; set; }
     public ICollection<Parent> Parents { get; set; }
     public ICollection<Hostes> Hosteses { get; set; }
+    public ICollection<Vehicle> Vehicles { get; set; }
 }
