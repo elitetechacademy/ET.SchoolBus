@@ -1,4 +1,6 @@
 using System;
+using System.Reflection;
+using ET.SchoolBus.Data.Mappings;
 using ET.SchoolBus.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,4 +23,13 @@ public class SchoolBusContext : DbContext
     public DbSet<Student> Students { get; set; }
     public DbSet<StudentParent> StudentParents { get; set; }
     public DbSet<Vehicle> Vehicles { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        // modelBuilder.ApplyConfiguration<Brand>(new BrandMapping());
+        // modelBuilder.ApplyConfiguration<Model>(new ModelMapping());
+
+        base.OnModelCreating(modelBuilder);
+    }
 }

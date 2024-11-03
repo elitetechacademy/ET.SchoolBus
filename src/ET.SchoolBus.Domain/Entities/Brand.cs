@@ -6,7 +6,7 @@ namespace ET.SchoolBus.Domain.Entities;
 public class Brand : BaseEntity
 {
     public int BrandId { get; set; } //Primary Key
-    public string BrandName { get; set; }
+    public string BrandName { get; set; } 
 
     public ICollection<Vehicle> Vehicles { get; set; }
 
