@@ -25,8 +25,7 @@ public class StudentMapping : BaseMapping<Student>
         .HasColumnOrder(2);
 
         builder.Property(x => x.SchoolId)
-        .HasColumnName("Name")
-        .HasColumnType("nvarchar(30)")
+        .HasColumnName("SchoolId")
         .HasColumnOrder(3);
 
         builder.Property(x => x.IdentityNumber)

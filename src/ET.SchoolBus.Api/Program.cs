@@ -10,7 +10,8 @@ builder.Services.AddSwaggerGen();
 
 //DI servisleri
 builder.Services.AddDbContext<SchoolBusContext>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SchoolBusConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SchoolBusConnection"), 
+        builder => builder.MigrationsAssembly("ET.SchoolBus.Data")));
 
 var app = builder.Build();
 
@@ -23,15 +24,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
-
-
 app.UseHttpsRedirection();
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
  

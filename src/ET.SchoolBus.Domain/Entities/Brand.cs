@@ -2,7 +2,7 @@ using System;
 using ET.SchoolBus.Domain.Common;
 
 namespace ET.SchoolBus.Domain.Entities;
-
+ 
 public class Brand : BaseEntity
 {
     public int BrandId { get; set; } //Primary Key
@@ -10,5 +10,5 @@ public class Brand : BaseEntity
 
     public ICollection<Vehicle> Vehicles { get; set; }
 
-    public ICollection<Model> Models { get; set; }
+    public ICollection<Model> Models { get; set; } //Navigation Property
 }

@@ -27,8 +27,6 @@ public class SchoolBusContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-        // modelBuilder.ApplyConfiguration<Brand>(new BrandMapping());
-        // modelBuilder.ApplyConfiguration<Model>(new ModelMapping());
 
         base.OnModelCreating(modelBuilder);
     }

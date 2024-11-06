@@ -2,7 +2,7 @@ using System;
 using ET.SchoolBus.Domain.Common;
 
 namespace ET.SchoolBus.Domain.Entities;
-
+ 
 public class Parent : BaseEntity, ITenantEntity
 {
     public int ParentId { get; set; } //Primary Key

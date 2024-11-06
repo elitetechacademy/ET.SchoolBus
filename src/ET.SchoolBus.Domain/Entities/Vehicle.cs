@@ -13,7 +13,7 @@ public class Vehicle : BaseEntity, ITenantEntity
     public int BrandId { get; set; } //Foreign Key
     public int ModelId { get; set; } //Foreign Key
     public int ModelYear { get; set; }
-
+ 
     public Brand Brand { get; set; }
     public Model Model { get; set; }
     public Driver? Driver { get; set; }
