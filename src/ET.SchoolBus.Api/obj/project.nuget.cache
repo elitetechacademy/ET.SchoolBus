@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Dz5eV5Vz+zhRjigoPO6IAaXxSfqPkFfbqlB3IlShzZUrhsP3BKvjAw/5Bw58rWDHlF+GR3ERfb4u1zsLfIdEmQ==",
+  "dgSpecHash": "lyp8hk9B5GM0QH2RT7ry8LDBa3WIbmXKv2WunNsDqGmP+j/fVYzZyFggLp3vp+8b9RkAyCdQzCU30TNzGw/F+A==",
   "success": true,
-  "projectFilePath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Api/ET.SchoolBus.Api.csproj",
+  "projectFilePath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Api/ET.SchoolBus.Api.csproj",
   "expectedPackageFiles": [
     "/home/ibrahimarac/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/home/ibrahimarac/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",

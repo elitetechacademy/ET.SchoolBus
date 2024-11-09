@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ET.SchoolBus.Data.Migrations
 {
     [DbContext(typeof(SchoolBusContext))]
-    [Migration("20241106175332_FirstCreate")]
+    [Migration("20241109175037_FirstCreate")]
     partial class FirstCreate
     {
         /// <inheritdoc />

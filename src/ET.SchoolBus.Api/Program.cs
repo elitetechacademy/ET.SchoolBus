@@ -3,28 +3,26 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+//DI servisleri
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-//DI servisleri
-builder.Services.AddDbContext<SchoolBusContext>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SchoolBusConnection"), 
-        builder => builder.MigrationsAssembly("ET.SchoolBus.Data")));
+builder.Services.AddControllers();
+builder.Services.AddDbContext<SchoolBusContext>(optionsBuilder =>
+    optionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("SchoolBusConnection")));
 
 var app = builder.Build();
 
 //Middlewares
-
-// Configure the HTTP request pipeline.
+app.UseRouting();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseHttpsRedirection();
+app.UseEndpoints(endpoints=>{
+    endpoints.MapControllers();
+});
 
 app.Run();
 

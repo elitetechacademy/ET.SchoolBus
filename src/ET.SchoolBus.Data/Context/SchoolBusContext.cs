@@ -24,6 +24,7 @@ public class SchoolBusContext : DbContext
     public DbSet<StudentParent> StudentParents { get; set; }
     public DbSet<Vehicle> Vehicles { get; set; }
 
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

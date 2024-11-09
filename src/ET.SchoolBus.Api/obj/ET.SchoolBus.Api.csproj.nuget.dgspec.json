@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Api/ET.SchoolBus.Api.csproj": {}
+    "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Api/ET.SchoolBus.Api.csproj": {}
   },
   "projects": {
-    "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Api/ET.SchoolBus.Api.csproj": {
+    "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Api/ET.SchoolBus.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Api/ET.SchoolBus.Api.csproj",
+        "projectUniqueName": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Api/ET.SchoolBus.Api.csproj",
         "projectName": "ET.SchoolBus.Api",
-        "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Api/ET.SchoolBus.Api.csproj",
+        "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Api/ET.SchoolBus.Api.csproj",
         "packagesPath": "/home/ibrahimarac/.nuget/packages/",
-        "outputPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Api/obj/",
+        "outputPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/ibrahimarac/.nuget/NuGet/NuGet.Config"
@@ -26,11 +26,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Application/ET.SchoolBus.Application.csproj": {
-                "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Application/ET.SchoolBus.Application.csproj"
+              "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Application/ET.SchoolBus.Application.csproj": {
+                "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Application/ET.SchoolBus.Application.csproj"
               },
-              "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Data/ET.SchoolBus.Data.csproj": {
-                "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Data/ET.SchoolBus.Data.csproj"
+              "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Data/ET.SchoolBus.Data.csproj": {
+                "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Data/ET.SchoolBus.Data.csproj"
               }
             }
           }
@@ -87,14 +87,14 @@
         }
       }
     },
-    "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Application/ET.SchoolBus.Application.csproj": {
+    "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Application/ET.SchoolBus.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Application/ET.SchoolBus.Application.csproj",
+        "projectUniqueName": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Application/ET.SchoolBus.Application.csproj",
         "projectName": "ET.SchoolBus.Application",
-        "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Application/ET.SchoolBus.Application.csproj",
+        "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Application/ET.SchoolBus.Application.csproj",
         "packagesPath": "/home/ibrahimarac/.nuget/packages/",
-        "outputPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Application/obj/",
+        "outputPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/ibrahimarac/.nuget/NuGet/NuGet.Config"
@@ -109,8 +109,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/ET.SchoolBus.Domain.csproj": {
-                "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/ET.SchoolBus.Domain.csproj"
+              "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/ET.SchoolBus.Domain.csproj": {
+                "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/ET.SchoolBus.Domain.csproj"
               }
             }
           }
@@ -144,14 +144,14 @@
         }
       }
     },
-    "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Data/ET.SchoolBus.Data.csproj": {
+    "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Data/ET.SchoolBus.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Data/ET.SchoolBus.Data.csproj",
+        "projectUniqueName": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Data/ET.SchoolBus.Data.csproj",
         "projectName": "ET.SchoolBus.Data",
-        "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Data/ET.SchoolBus.Data.csproj",
+        "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Data/ET.SchoolBus.Data.csproj",
         "packagesPath": "/home/ibrahimarac/.nuget/packages/",
-        "outputPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Data/obj/",
+        "outputPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/ibrahimarac/.nuget/NuGet/NuGet.Config"
@@ -166,8 +166,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/ET.SchoolBus.Domain.csproj": {
-                "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/ET.SchoolBus.Domain.csproj"
+              "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/ET.SchoolBus.Domain.csproj": {
+                "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/ET.SchoolBus.Domain.csproj"
               }
             }
           }
@@ -213,14 +213,14 @@
         }
       }
     },
-    "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/ET.SchoolBus.Domain.csproj": {
+    "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/ET.SchoolBus.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/ET.SchoolBus.Domain.csproj",
+        "projectUniqueName": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/ET.SchoolBus.Domain.csproj",
         "projectName": "ET.SchoolBus.Domain",
-        "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/ET.SchoolBus.Domain.csproj",
+        "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/ET.SchoolBus.Domain.csproj",
         "packagesPath": "/home/ibrahimarac/.nuget/packages/",
-        "outputPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/7. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/obj/",
+        "outputPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/ibrahimarac/.nuget/NuGet/NuGet.Config"
