@@ -20,7 +20,8 @@ public class BrandController : ControllerBase
     [HttpGet("get-all")]
     public async Task<ActionResult> GetAll()
     {
-        var brands = await _schoolBusContext.Brands.ToListAsync();
+        var brands = await _schoolBusContext.Brands.Where(x => x.Status)
+            .ToListAsync();
         return Ok(brands);
     }
 
@@ -73,6 +74,32 @@ public class BrandController : ControllerBase
         catch (Exception ex)
         {
             _logger.LogError(ex, $"BrandController => Update : Kayıt güncellenirken bir hata oluştu.");
+            return BadRequest($"Kayıt güncellenirken bir hata oluştu.");
+        }
+    }
+
+    [HttpDelete("delete/{id:int}")]
+    public async Task<ActionResult> Delete(int id)
+    {
+        var existsBrand = await _schoolBusContext.Brands.FindAsync(id);
+        if(existsBrand is null)
+        {
+            return NotFound($"{id} nolu kayıt bulunamadı.");
+        }
+
+        existsBrand.Status = false;
+        existsBrand.UpdatedTime = DateTime.Now;
+        existsBrand.UpdatedUser = "admin";
+
+        try
+        {
+            _schoolBusContext.Brands.Update(existsBrand);
+            int numRows = await _schoolBusContext.SaveChangesAsync();
+            return Ok($"{numRows} adet kayıt silindi.");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"BrandController => Update : Kayıt dilinirken bir hata oluştu.");
             return BadRequest($"Kayıt güncellenirken bir hata oluştu.");
         }
     }
