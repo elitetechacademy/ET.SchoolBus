@@ -8,12 +8,11 @@
 
   <ItemGroup>
     <Folder Include="Automapper/" />
-    <Folder Include="DTOs/" />
-    <Folder Include="Services/" />
     <Folder Include="Validators/" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../ET.SchoolBus.Data/ET.SchoolBus.Data.csproj" />
     <ProjectReference Include="..\ET.SchoolBus.Domain\ET.SchoolBus.Domain.csproj" />
   </ItemGroup>
 

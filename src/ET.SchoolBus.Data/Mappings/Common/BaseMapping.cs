@@ -24,6 +24,7 @@ public abstract class BaseMapping<T> : IEntityTypeConfiguration<T>
 
         builder.Property(x => x.UpdatedUser)
             .HasColumnName("UpdatedUser")
+            .IsRequired(false)
             .HasColumnOrder(13);
 
         builder.Property(x => x.UpdatedTime)

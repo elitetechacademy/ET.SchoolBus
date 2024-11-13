@@ -1,5 +1,5 @@
-using ET.SchoolBus.Data.Context;
-using Microsoft.EntityFrameworkCore;
+using ET.SchoolBus.Application;
+using ET.SchoolBus.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,8 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-builder.Services.AddDbContext<SchoolBusContext>(optionsBuilder =>
-    optionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("SchoolBusConnection")));
+
+//Data Layer
+builder.Services.AddDataServices(builder.Configuration);
+
+//Application Layer
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 

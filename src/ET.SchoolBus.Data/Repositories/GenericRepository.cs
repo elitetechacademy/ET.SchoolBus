@@ -20,7 +20,7 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity>
         DbSet = _schoolBusContext.Set<TEntity>();
     }
 
-    public async Task<List<TEntity>> GetAllActiveAsync()
+    public async Task<List<TEntity>> GetAllAsync()
     {
         return await DbSet.Where(x => x.Status).ToListAsync();
     }
@@ -28,10 +28,7 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity>
     public async Task<TEntity> GetByIdAsync(int id)
     {
         var entity = await DbSet.FindAsync(id);
-        if (entity is not null)
-            return entity;
-        else
-            throw new NotFoundException($"{id} nolu kayıt bulunamadı.");
+        return entity;
     }
 
 

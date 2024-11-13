@@ -1,106 +1,51 @@
 
-using System.Diagnostics;
-using ET.SchoolBus.Data.Context;
-using ET.SchoolBus.Domain.Entities;
+using ET.SchoolBus.Api.Controllers;
+using ET.SchoolBus.Application.DTOs.Request;
+using ET.SchoolBus.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 [Route("brand")]
-public class BrandController : ControllerBase
-{
-    private readonly SchoolBusContext _schoolBusContext;
-    private readonly ILogger<BrandController> _logger;
+public class BrandController : ApiController
+{    
+    private readonly IBrandService _brandService;
 
-    public BrandController(SchoolBusContext schoolBusContext, ILogger<BrandController> logger)
+    public BrandController(IBrandService brandService)
     {
-        _schoolBusContext = schoolBusContext;
-        _logger = logger;
+        _brandService = brandService;
     }
 
     [HttpGet("get-all")]
     public async Task<ActionResult> GetAll()
     {
-        var brands = await _schoolBusContext.Brands.Where(x => x.Status)
-            .ToListAsync();
-        return Ok(brands);
+        var result = await _brandService.GetAllAsync();
+        return CustomResponse(result);
     }
 
     [HttpGet("get-by-id/{id:int}")]
     public async Task<ActionResult> GetById(int id)
     {
-        var brand = await _schoolBusContext.Brands.FindAsync(id);
-
-        if (brand is null)
-            return NotFound($"{id} numaralı kayıt bulunamadı.");
-        else
-            return Ok(brand);
+        var result = await _brandService.GetByIdAsync(id);
+        return CustomResponse(result);
     }
 
     [HttpPost("create")]
-    public async Task<ActionResult> Create([FromBody] Brand brand)
+    public async Task<ActionResult> Create([FromBody] BrandCreateDto brandCreateDto)
     {
-        try
-        {
-            await _schoolBusContext.Brands.AddAsync(brand);
-            int numRows = await _schoolBusContext.SaveChangesAsync();
-            return Ok($"{numRows} adet kayıt eklendi.");
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, $"BrandController => Create : Kayıt eklenirken bir hata oluştu.");
-            return BadRequest($"Kayıt eklenirken bir hata oluştu.");
-        }
+        var result = await _brandService.AddBrandAsync(brandCreateDto);
+        return CustomResponse(result);
     }
 
     [HttpPut("update")]
-    public async Task<ActionResult> Update([FromBody] Brand brand)
+    public async Task<ActionResult> Update([FromBody] BrandUpdateDto brandUpdateDto)
     {
-        var existsBrand = await _schoolBusContext.Brands.FindAsync(brand.BrandId);
-        if(existsBrand is null)
-        {
-            return NotFound($"{brand.BrandId} nolu kayıt bulunamadı.");
-        }
-
-        existsBrand.BrandName = brand.BrandName;
-        existsBrand.UpdatedTime = DateTime.Now;
-        existsBrand.UpdatedUser = "admin";
-
-        try
-        {
-            _schoolBusContext.Brands.Update(existsBrand);
-            int numRows = await _schoolBusContext.SaveChangesAsync();
-            return Ok($"{numRows} adet kayıt güncellendi.");
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, $"BrandController => Update : Kayıt güncellenirken bir hata oluştu.");
-            return BadRequest($"Kayıt güncellenirken bir hata oluştu.");
-        }
+        var result = await _brandService.UpdateBrandAsync(brandUpdateDto);
+        return CustomResponse(result);
     }
 
     [HttpDelete("delete/{id:int}")]
     public async Task<ActionResult> Delete(int id)
     {
-        var existsBrand = await _schoolBusContext.Brands.FindAsync(id);
-        if(existsBrand is null)
-        {
-            return NotFound($"{id} nolu kayıt bulunamadı.");
-        }
-
-        existsBrand.Status = false;
-        existsBrand.UpdatedTime = DateTime.Now;
-        existsBrand.UpdatedUser = "admin";
-
-        try
-        {
-            _schoolBusContext.Brands.Update(existsBrand);
-            int numRows = await _schoolBusContext.SaveChangesAsync();
-            return Ok($"{numRows} adet kayıt silindi.");
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, $"BrandController => Update : Kayıt dilinirken bir hata oluştu.");
-            return BadRequest($"Kayıt güncellenirken bir hata oluştu.");
-        }
+        var result = await _brandService.DeleteBrandAsync(id);
+        return CustomResponse(result);
     }
 }

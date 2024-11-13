@@ -1,6 +1,8 @@
 using System;
 using ET.SchoolBus.Data.Context;
+using ET.SchoolBus.Data.Repositories;
 using ET.SchoolBus.Domain.Common;
+using ET.SchoolBus.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
@@ -11,10 +13,29 @@ public class UnitOfWork : IUnitOfWork
     private bool disposed = false;
     private readonly SchoolBusContext _schoolBusContext;
 
+    #region Repository Instances
+    private IBrandRepository _brandRepository;
+
+    #endregion
+
     public UnitOfWork(SchoolBusContext schoolBusContext)
     {
         _schoolBusContext = schoolBusContext;
     }
+
+    #region Repository Init
+
+    public IBrandRepository BrandRepository
+    {
+        get
+        {
+            if (_brandRepository is null)
+                _brandRepository = new BrandRepository(_schoolBusContext);
+            return _brandRepository;
+        }
+    }
+
+    #endregion
 
     public IDbContextTransaction BeginTransaction()
     {
@@ -23,7 +44,7 @@ public class UnitOfWork : IUnitOfWork
 
     public async Task<bool> Commit()
     {
-        foreach(var entry in _schoolBusContext.ChangeTracker.Entries<BaseEntity>())
+        foreach (var entry in _schoolBusContext.ChangeTracker.Entries<BaseEntity>())
         {
             switch (entry.State)
             {
@@ -40,9 +61,9 @@ public class UnitOfWork : IUnitOfWork
                 case EntityState.Modified:
                     entry.Entity.UpdatedTime = DateTime.Now;
                     entry.Entity.UpdatedUser = "admin";
-                    break;      
+                    break;
                 default:
-                    break;              
+                    break;
             }
         }
 
@@ -57,10 +78,10 @@ public class UnitOfWork : IUnitOfWork
 
     public virtual void Dispose(bool disposing)
     {
-        if(disposed)
+        if (disposed)
             return;
 
-        if(disposing)
+        if (disposing)
         {
             //Managed Resource
             _schoolBusContext.Dispose();
