@@ -2,7 +2,7 @@ using System;
 using System.Linq.Expressions;
 using ET.SchoolBus.Domain.Common;
 
-namespace ET.SchoolBus.Domain.Repositories;
+namespace ET.SchoolBus.Domain.Repositories.Interfaces;
 
 public interface IGenericRepository<TEntity> : IDisposable where TEntity:BaseEntity
 {

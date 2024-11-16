@@ -1,6 +1,5 @@
-using System;
 using ET.SchoolBus.Application.DTOs.Request;
-using ET.SchoolBus.Domain.Repositories;
+using ET.SchoolBus.Domain.Repositories.Interfaces;
 using FluentValidation;
 
 namespace ET.SchoolBus.Application.Validators;

@@ -3,10 +3,10 @@ using System.Linq.Expressions;
 using ET.SchoolBus.Data.Context;
 using ET.SchoolBus.Domain.Common;
 using ET.SchoolBus.Domain.CustomException;
-using ET.SchoolBus.Domain.Repositories;
+using ET.SchoolBus.Domain.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace ET.SchoolBus.Data.Repositories;
+namespace ET.SchoolBus.Data.Repositories.Implementations;
 
 public class GenericRepository<TEntity> : IGenericRepository<TEntity>
     where TEntity : BaseEntity

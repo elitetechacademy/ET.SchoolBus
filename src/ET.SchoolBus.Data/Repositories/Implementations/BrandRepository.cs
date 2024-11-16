@@ -1,10 +1,10 @@
 using System;
 using ET.SchoolBus.Data.Context;
 using ET.SchoolBus.Domain.Entities;
-using ET.SchoolBus.Domain.Repositories;
+using ET.SchoolBus.Domain.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace ET.SchoolBus.Data.Repositories;
+namespace ET.SchoolBus.Data.Repositories.Implementations;
 
 public class BrandRepository : GenericRepository<Brand>, IBrandRepository
 {

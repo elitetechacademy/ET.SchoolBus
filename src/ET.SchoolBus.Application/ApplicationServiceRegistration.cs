@@ -1,7 +1,6 @@
-using System;
 using System.Reflection;
 using ET.SchoolBus.Application.Interfaces;
-using ET.SchoolBus.Application.Services.Implementaions;
+using ET.SchoolBus.Application.Services.Implementations;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 

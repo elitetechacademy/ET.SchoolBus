@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Globalization;
+
 using AutoMapper;
 using ET.SchoolBus.Application.DTOs.Request;
 using ET.SchoolBus.Application.DTOs.Response;
@@ -9,12 +7,12 @@ using ET.SchoolBus.Application.Validators;
 using ET.SchoolBus.Application.Wrapper;
 using ET.SchoolBus.Data.UnitWork;
 using ET.SchoolBus.Domain.Entities;
-using ET.SchoolBus.Domain.Repositories;
-using ET.SchoolBus.Pack.Enumerations;
+using ET.SchoolBus.Domain.Repositories.Interfaces;
+
 using ET.SchoolBus.Pack.Extensions;
 using Microsoft.Extensions.Logging;
 
-namespace ET.SchoolBus.Application.Services.Implementaions;
+namespace ET.SchoolBus.Application.Services.Implementations;
 
 public class BrandService : IBrandService
 {

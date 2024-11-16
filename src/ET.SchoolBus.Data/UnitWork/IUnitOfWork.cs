@@ -1,5 +1,5 @@
-using System;
-using ET.SchoolBus.Domain.Repositories;
+
+using ET.SchoolBus.Domain.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace ET.SchoolBus.Data.UnitWork;
