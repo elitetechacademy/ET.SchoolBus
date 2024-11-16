@@ -10,5 +10,6 @@ public class DomainToDto : Profile
     public DomainToDto()
     {
         CreateMap<Brand, BrandDto>();
+        CreateMap<Model, ModelDto>();
     }
 }

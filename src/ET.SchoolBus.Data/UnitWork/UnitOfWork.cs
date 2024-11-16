@@ -1,7 +1,7 @@
 using ET.SchoolBus.Data.Context;
 using ET.SchoolBus.Data.Repositories.Implementations;
+using ET.SchoolBus.Data.Repositories.Interfaces;
 using ET.SchoolBus.Domain.Common;
-using ET.SchoolBus.Domain.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
@@ -14,6 +14,7 @@ public class UnitOfWork : IUnitOfWork
 
     #region Repository Instances
     private IBrandRepository _brandRepository;
+    private IModelRepository _modelRepository;
 
     #endregion
 
@@ -31,6 +32,16 @@ public class UnitOfWork : IUnitOfWork
             if (_brandRepository is null)
                 _brandRepository = new BrandRepository(_schoolBusContext);
             return _brandRepository;
+        }
+    }
+
+    public IModelRepository ModelRepository
+    {
+        get
+        {
+            if (_modelRepository is null)
+                _modelRepository = new ModelRepository(_schoolBusContext);
+            return _modelRepository;
         }
     }
 

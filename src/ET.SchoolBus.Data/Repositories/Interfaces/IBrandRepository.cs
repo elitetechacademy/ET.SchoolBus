@@ -1,7 +1,7 @@
 using System;
 using ET.SchoolBus.Domain.Entities;
 
-namespace ET.SchoolBus.Domain.Repositories.Interfaces;
+namespace ET.SchoolBus.Data.Repositories.Interfaces;
 
 public interface IBrandRepository : IGenericRepository<Brand>
 {

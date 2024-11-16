@@ -1,6 +1,8 @@
 using ET.SchoolBus.Application.DTOs.Request;
-using ET.SchoolBus.Domain.Repositories.Interfaces;
+using ET.SchoolBus.Data.Repositories.Interfaces;
+using ET.SchoolBus.Pack.Enumerations;
 using FluentValidation;
+using ET.SchoolBus.Pack.Extensions;
 
 namespace ET.SchoolBus.Application.Validators;
 
@@ -24,11 +26,12 @@ public class CreateBrandValidator : AbstractValidator<BrandCreateDto>
         _brandRepository = brandRepository;
 
         RuleFor(x => x.BrandName)
+            .SetValidator(new BrandNameValidator())
             .MustAsync(async (brandName, _) =>
             {
-                return !await _brandRepository.BrandExistsByNameOnCreate(brandName.ToUpper());
+                return !await _brandRepository.BrandExistsByNameOnCreate(brandName.ToUpperByCulture(Culture.TR));
             }).WithMessage("Bu isimde bir marka zaten kayıtlıdır.")
-            .SetValidator(new BrandNameValidator());
+            ;
     }
 }
 
@@ -52,7 +55,7 @@ public class UpdateBrandValidator : AbstractValidator<BrandUpdateDto>
             .MustAsync(async (brand, _) =>
             {
                 return !await _brandRepository.BrandExistsByNameOnUpdate(brand.BrandId,
-                    brand.BrandName.ToUpper());
+                    brand.BrandName.ToUpperByCulture(Culture.TR));
             }).WithMessage("Bu isimde bir marka zaten kayıtlıdır.");
     }
 }

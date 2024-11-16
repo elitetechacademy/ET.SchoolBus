@@ -1,7 +1,7 @@
 using System;
 using ET.SchoolBus.Data.Context;
+using ET.SchoolBus.Data.Repositories.Interfaces;
 using ET.SchoolBus.Domain.Entities;
-using ET.SchoolBus.Domain.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace ET.SchoolBus.Data.Repositories.Implementations;

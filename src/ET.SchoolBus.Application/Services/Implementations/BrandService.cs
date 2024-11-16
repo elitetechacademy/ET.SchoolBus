@@ -5,9 +5,9 @@ using ET.SchoolBus.Application.DTOs.Response;
 using ET.SchoolBus.Application.Interfaces;
 using ET.SchoolBus.Application.Validators;
 using ET.SchoolBus.Application.Wrapper;
+using ET.SchoolBus.Data.Repositories.Interfaces;
 using ET.SchoolBus.Data.UnitWork;
 using ET.SchoolBus.Domain.Entities;
-using ET.SchoolBus.Domain.Repositories.Interfaces;
 
 using ET.SchoolBus.Pack.Extensions;
 using Microsoft.Extensions.Logging;

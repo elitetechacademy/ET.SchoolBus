@@ -1,6 +1,7 @@
 using System.Reflection;
 using ET.SchoolBus.Application.Interfaces;
 using ET.SchoolBus.Application.Services.Implementations;
+using ET.SchoolBus.Application.Services.Interfaces;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,5 +14,6 @@ public static class ApplicationServiceRegistration
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
         services.AddScoped<IBrandService, BrandService>();
+        services.AddScoped<IModelService, ModelService>();
     }
 }

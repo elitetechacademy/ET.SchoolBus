@@ -1,9 +1,9 @@
 using System;
 using System.Linq.Expressions;
 using ET.SchoolBus.Data.Context;
+using ET.SchoolBus.Data.Repositories.Interfaces;
 using ET.SchoolBus.Domain.Common;
 using ET.SchoolBus.Domain.CustomException;
-using ET.SchoolBus.Domain.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace ET.SchoolBus.Data.Repositories.Implementations;
