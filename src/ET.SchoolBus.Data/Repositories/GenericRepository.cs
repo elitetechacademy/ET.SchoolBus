@@ -1,4 +1,5 @@
 using System;
+using System.Linq.Expressions;
 using ET.SchoolBus.Data.Context;
 using ET.SchoolBus.Domain.Common;
 using ET.SchoolBus.Domain.CustomException;
@@ -29,6 +30,11 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity>
     {
         var entity = await DbSet.FindAsync(id);
         return entity;
+    }
+
+    public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> filter)
+    {
+        return await DbSet.AnyAsync(filter, CancellationToken.None);
     }
 
 

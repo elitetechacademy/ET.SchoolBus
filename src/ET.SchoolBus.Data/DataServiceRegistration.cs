@@ -1,6 +1,8 @@
 using System;
 using ET.SchoolBus.Data.Context;
+using ET.SchoolBus.Data.Repositories;
 using ET.SchoolBus.Data.UnitWork;
+using ET.SchoolBus.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,5 +17,7 @@ public static class DataServiceRegistration
         services.AddDbContext<SchoolBusContext>(optionsBuilder =>
     optionsBuilder.UseSqlServer(configuration.GetConnectionString("SchoolBusConnection")));
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+        //Repositories
+        services.AddScoped<IBrandRepository, BrandRepository>();
     }
 }

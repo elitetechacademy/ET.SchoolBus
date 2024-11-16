@@ -1,4 +1,5 @@
 using System;
+using System.Linq.Expressions;
 using ET.SchoolBus.Domain.Common;
 
 namespace ET.SchoolBus.Domain.Repositories;
@@ -7,6 +8,7 @@ public interface IGenericRepository<TEntity> : IDisposable where TEntity:BaseEnt
 {
     Task<List<TEntity>> GetAllAsync();
     Task<TEntity> GetByIdAsync(int id);
+    Task<bool> AnyAsync(Expression<Func<TEntity, bool>> filter);
 
     Task AddAsync(TEntity entity);
     void Update(TEntity entity);

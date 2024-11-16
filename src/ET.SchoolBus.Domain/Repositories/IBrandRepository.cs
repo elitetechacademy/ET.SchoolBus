@@ -5,5 +5,6 @@ namespace ET.SchoolBus.Domain.Repositories;
 
 public interface IBrandRepository : IGenericRepository<Brand>
 {
-    Task<List<Brand>> GetDeletedBrandsAsync();
+    Task<bool> BrandExistsByNameOnCreate(string brandName);
+    Task<bool> BrandExistsByNameOnUpdate(int brandId, string brandName);
 }

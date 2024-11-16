@@ -15,8 +15,13 @@ public class BrandRepository : GenericRepository<Brand>, IBrandRepository
         _schoolBusContext = schoolBusContext;
     }
 
-    public async Task<List<Brand>> GetDeletedBrandsAsync()
+    public async Task<bool> BrandExistsByNameOnCreate(string brandName)
     {
-        return await _schoolBusContext.Brands.Where(x => !x.Status).ToListAsync();
+        return await _schoolBusContext.Brands.AnyAsync(x => x.BrandName == brandName);
+    }
+
+    public async Task<bool> BrandExistsByNameOnUpdate(int brandId, string brandName)
+    {
+        return await _schoolBusContext.Brands.AnyAsync(x => x.BrandName == brandName && x.BrandId != brandId);
     }
 }

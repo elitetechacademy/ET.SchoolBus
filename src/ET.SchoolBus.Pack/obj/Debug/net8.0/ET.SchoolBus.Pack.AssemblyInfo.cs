@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ET.SchoolBus.Pack")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38d50b4824572c3048e80cd51c92e8a534d860fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86a193dabd076c75b326bff7a464784ed6e29210")]
 [assembly: System.Reflection.AssemblyProductAttribute("ET.SchoolBus.Pack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ET.SchoolBus.Pack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

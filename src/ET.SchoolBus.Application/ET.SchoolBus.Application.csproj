@@ -7,13 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Automapper/" />
-    <Folder Include="Validators/" />
+    <ProjectReference Include="../ET.SchoolBus.Data/ET.SchoolBus.Data.csproj" />
+    <ProjectReference Include="../ET.SchoolBus.Pack/ET.SchoolBus.Pack.csproj" />
+    <ProjectReference Include="..\ET.SchoolBus.Domain\ET.SchoolBus.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../ET.SchoolBus.Data/ET.SchoolBus.Data.csproj" />
-    <ProjectReference Include="..\ET.SchoolBus.Domain\ET.SchoolBus.Domain.csproj" />
+    <PackageReference Include="Automapper" Version="13.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.10.0" />
   </ItemGroup>
 
 </Project>

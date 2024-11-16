@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "ngzsksyXfL5VI4ktBKobJp64Vg/2okuf/cbZkx1WXRqsG0HWfW2yyr2yIIIHqr16u91guWncgkudpAFwpFcMJw==",
+  "dgSpecHash": "O/vbCxcB3tO2V4XqOytOIPLfYKfDJTS1FBTthtR8xbuDA4AHvfHAoaoXvnarB0mtFlLcp5bMIcSQUobs/FVScA==",
   "success": true,
-  "projectFilePath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/8. Hafta/Uygulamalar/SchoolBus/ET.SchoolBus/src/ET.SchoolBus.Api/ET.SchoolBus.Api.csproj",
+  "projectFilePath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/9. Hafta/Uygulamalar/ET.SchoolBus/src/ET.SchoolBus.Api/ET.SchoolBus.Api.csproj",
   "expectedPackageFiles": [
+    "/home/ibrahimarac/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/home/ibrahimarac/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/home/ibrahimarac/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",
+    "/home/ibrahimarac/.nuget/packages/fluentvalidation/11.10.0/fluentvalidation.11.10.0.nupkg.sha512",
+    "/home/ibrahimarac/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.10.0/fluentvalidation.dependencyinjectionextensions.11.10.0.nupkg.sha512",
     "/home/ibrahimarac/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/ibrahimarac/.nuget/packages/microsoft.aspnetcore/2.2.0/microsoft.aspnetcore.2.2.0.nupkg.sha512",
     "/home/ibrahimarac/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
