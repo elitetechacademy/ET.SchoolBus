@@ -25,4 +25,9 @@ public class ModelRepository : GenericRepository<Model>, IModelRepository
         return await _schoolBusContext.Models.AnyAsync(x => x.BrandId == brandId &&
             x.ModelName == modelName && x.ModelId != modelId);
     }
+
+    public async Task<List<Model>> GetByBrandIdAsync(int brandId)
+    {
+        return await _schoolBusContext.Models.Where(x => x.BrandId == brandId).ToListAsync();
+    }
 }

@@ -67,6 +67,28 @@ public class ModelService : IModelService
         }
     }
 
+    public async Task<Result<List<ModelDto>>> GetAllByBrandIdAsync(int brandId)
+    {
+        var brandEntity = await _unitWork.BrandRepository.GetByIdAsync(brandId);
+        if(brandEntity is null)
+        {
+            _logger.LogInformation($"ModelService => GetAllByBrandIdAsync : {brandId} numaralı marka bulunamadı.");
+            return Result<List<ModelDto>>.Failure($"Geçerli bir marka seçilmelidir.");
+        }
+
+        try
+        {
+            var modelEntities = await _unitWork.ModelRepository.GetByBrandIdAsync(brandId);
+            var modelDtos = _mapper.Map<List<Model>, List<ModelDto>>(modelEntities);
+            return Result<List<ModelDto>>.Success(modelDtos);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"{brandId} nolu marka bulunamadı.");
+            return Result<List<ModelDto>>.Failure("Markaya bağlı modeller yüklenirken bir hata oluştu.");
+        }
+    }
+
     public async Task<Result> AddModelAsync(ModelCreateDto modelCreateDto)
     {
         var validator = new CreateModelValidator(_modelRepository, _brandRepository);
@@ -138,7 +160,5 @@ public class ModelService : IModelService
             _logger.LogError(ex, $"ModelService => Update : Kayıt silinirken bir hata oluştu.");
             return Result.Failure($"Model silinemedi.");
         }
-    }
-
-
+    }    
 }

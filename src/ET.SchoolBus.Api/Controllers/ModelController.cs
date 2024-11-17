@@ -29,6 +29,13 @@ public class ModelController : ApiController
         return CustomResponse(result);
     }
 
+    [HttpGet("get-by-brand/{id:int}")]
+    public async Task<ActionResult> GetByBrandId(int id)
+    {
+        var result = await _modelService.GetAllByBrandIdAsync(id);
+        return CustomResponse(result);
+    }
+
     [HttpPost("create")]
     public async Task<ActionResult> Create([FromBody] ModelCreateDto modelCreateDto)
     {
