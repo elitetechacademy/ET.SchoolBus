@@ -23,6 +23,8 @@ public class SchoolBusContext : DbContext
     public DbSet<Student> Students { get; set; }
     public DbSet<StudentParent> StudentParents { get; set; }
     public DbSet<Vehicle> Vehicles { get; set; }
+    public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+    public DbSet<Role> Roles { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
