@@ -8,6 +8,7 @@ public interface IUnitOfWork : IDisposable
 {
     IBrandRepository BrandRepository{get;}
     IModelRepository ModelRepository{get;}
+    IApplicationUserRepository ApplicationUserRepository{get;}
     IDbContextTransaction BeginTransaction();
     Task<bool> Commit();
 }

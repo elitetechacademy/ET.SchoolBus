@@ -161,3 +161,4 @@
 /media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/9. Hafta/Uygulamalar/ET.SchoolBus/src/ET.SchoolBus.Api/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
 /media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/9. Hafta/Uygulamalar/ET.SchoolBus/src/ET.SchoolBus.Api/bin/Debug/net8.0/ET.SchoolBus.Integration.dll
 /media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/9. Hafta/Uygulamalar/ET.SchoolBus/src/ET.SchoolBus.Api/bin/Debug/net8.0/ET.SchoolBus.Integration.pdb
+/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/9. Hafta/Uygulamalar/ET.SchoolBus/src/ET.SchoolBus.Api/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

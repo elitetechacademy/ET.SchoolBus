@@ -15,5 +15,6 @@ public static class ApplicationServiceRegistration
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
         services.AddScoped<IBrandService, BrandService>();
         services.AddScoped<IModelService, ModelService>();
+        services.AddScoped<ILoginService, LoginService>();
     }
 }

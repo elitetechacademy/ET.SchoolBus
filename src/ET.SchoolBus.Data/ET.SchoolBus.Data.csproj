@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../ET.SchoolBus.Integration/ET.SchoolBus.Integration.csproj" />
     <ProjectReference Include="..\ET.SchoolBus.Domain\ET.SchoolBus.Domain.csproj" />
   </ItemGroup>
 

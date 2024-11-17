@@ -15,6 +15,7 @@ public class UnitOfWork : IUnitOfWork
     #region Repository Instances
     private IBrandRepository _brandRepository;
     private IModelRepository _modelRepository;
+    private IApplicationUserRepository _applicationUserRepository;
 
     #endregion
 
@@ -42,6 +43,16 @@ public class UnitOfWork : IUnitOfWork
             if (_modelRepository is null)
                 _modelRepository = new ModelRepository(_schoolBusContext);
             return _modelRepository;
+        }
+    }
+
+    public IApplicationUserRepository ApplicationUserRepository
+    {
+        get
+        {
+            if (_applicationUserRepository is null)
+                _applicationUserRepository = new ApplicationUserRepository(_schoolBusContext);
+            return _applicationUserRepository;
         }
     }
 
