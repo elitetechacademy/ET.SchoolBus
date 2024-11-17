@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ET.SchoolBus.Integration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa901476db399cff3d58f442fdc2f4ddaf6351ed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8cc87eef1445753ca678443a38b250630c3d987")]
 [assembly: System.Reflection.AssemblyProductAttribute("ET.SchoolBus.Integration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ET.SchoolBus.Integration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

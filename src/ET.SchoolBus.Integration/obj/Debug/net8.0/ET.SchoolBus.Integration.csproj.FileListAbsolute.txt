@@ -10,3 +10,4 @@
 /media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/9. Hafta/Uygulamalar/ET.SchoolBus/src/ET.SchoolBus.Integration/obj/Debug/net8.0/refint/ET.SchoolBus.Integration.dll
 /media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/9. Hafta/Uygulamalar/ET.SchoolBus/src/ET.SchoolBus.Integration/obj/Debug/net8.0/ET.SchoolBus.Integration.pdb
 /media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/9. Hafta/Uygulamalar/ET.SchoolBus/src/ET.SchoolBus.Integration/obj/Debug/net8.0/ref/ET.SchoolBus.Integration.dll
+/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/9. Hafta/Uygulamalar/ET.SchoolBus/src/ET.SchoolBus.Integration/obj/Debug/net8.0/ET.SchoolBus.Integration.csproj.AssemblyReference.cache

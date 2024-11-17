@@ -14,6 +14,9 @@ builder.Services.AddDataServices(builder.Configuration);
 //Application Layer
 builder.Services.AddApplicationServices();
 
+//Integration Layer
+builder.Services.AddIntegrationServices();
+
 var app = builder.Build();
 
 //Middlewares
