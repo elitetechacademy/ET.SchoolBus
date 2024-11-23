@@ -55,11 +55,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/9. Hafta/Uygulamalar/ET.SchoolBus/src/ET.SchoolBus.Pack/ET.SchoolBus.Pack.csproj",
+      "projectUniqueName": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Pack/ET.SchoolBus.Pack.csproj",
       "projectName": "ET.SchoolBus.Pack",
-      "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/9. Hafta/Uygulamalar/ET.SchoolBus/src/ET.SchoolBus.Pack/ET.SchoolBus.Pack.csproj",
+      "projectPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Pack/ET.SchoolBus.Pack.csproj",
       "packagesPath": "/home/ibrahimarac/.nuget/packages/",
-      "outputPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/9. Hafta/Uygulamalar/ET.SchoolBus/src/ET.SchoolBus.Pack/obj/",
+      "outputPath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Pack/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/ibrahimarac/.nuget/NuGet/NuGet.Config"

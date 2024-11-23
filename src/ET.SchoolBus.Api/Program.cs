@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using ET.SchoolBus.Data;
 using ET.SchoolBus.Application;
+using ET.SchoolBus.Api.Configurations;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,6 +31,7 @@ builder.Services.AddAuthentication()
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? ""))                   
         };
     });
+builder.Services.ConfigureSwaggerService();
 
 //Application Layer
 builder.Services.AddApplicationServices();
@@ -47,9 +49,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseHttpsRedirection();
-app.UseEndpoints(endpoints=>{
-    endpoints.MapControllers();
-});
+
+app.UseAuthorization();
+
+app.MapControllers();
 
 app.Run();
 

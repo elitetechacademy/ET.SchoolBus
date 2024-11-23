@@ -1,7 +1,10 @@
 
 using ET.SchoolBus.Api.Controllers;
+using ET.SchoolBus.Api.CustomAttributes;
 using ET.SchoolBus.Application.DTOs.Request;
 using ET.SchoolBus.Application.Interfaces;
+using ET.SchoolBus.Domain.Enumerations;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 [Route("brand")]
@@ -15,6 +18,7 @@ public class BrandController : ApiController
     }
 
     [HttpGet("get-all")]
+    [Permission(Roles.SuperAdmin, Roles.Admin, Roles.User)]
     public async Task<ActionResult> GetAll()
     {
         var result = await _brandService.GetAllAsync();
@@ -22,6 +26,7 @@ public class BrandController : ApiController
     }
 
     [HttpGet("get-by-id/{id:int}")]
+    [Permission(Roles.SuperAdmin, Roles.Admin, Roles.User)]
     public async Task<ActionResult> GetById(int id)
     {
         var result = await _brandService.GetByIdAsync(id);
@@ -29,6 +34,7 @@ public class BrandController : ApiController
     }
 
     [HttpPost("create")]
+    [Permission(Roles.SuperAdmin, Roles.Admin)]
     public async Task<ActionResult> Create([FromBody] BrandCreateDto brandCreateDto)
     {
         var result = await _brandService.AddBrandAsync(brandCreateDto);
@@ -36,6 +42,7 @@ public class BrandController : ApiController
     }
 
     [HttpPut("update")]
+    [Permission(Roles.SuperAdmin, Roles.Admin)]
     public async Task<ActionResult> Update([FromBody] BrandUpdateDto brandUpdateDto)
     {
         var result = await _brandService.UpdateBrandAsync(brandUpdateDto);
@@ -43,6 +50,7 @@ public class BrandController : ApiController
     }
 
     [HttpDelete("delete/{id:int}")]
+    [Permission(Roles.SuperAdmin)]
     public async Task<ActionResult> Delete(int id)
     {
         var result = await _brandService.DeleteBrandAsync(id);

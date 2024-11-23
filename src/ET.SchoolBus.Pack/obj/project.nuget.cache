@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BkVlXIsOI3kjrHUiRnjoOJBkCxzrmh+67MqaN4EvV51BwEKwlKtKlLs+hnDpYMYRt5B8OzU9KtGykzoOUmPhdw==",
+  "dgSpecHash": "4aSsrx9RVDkFR20Q7N82fpfhpnBZ0dw780Jae8gOTHywuQWihMU8Y8Uwub51roLWOen/ftW2kM4GNO6DatijKw==",
   "success": true,
-  "projectFilePath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/9. Hafta/Uygulamalar/ET.SchoolBus/src/ET.SchoolBus.Pack/ET.SchoolBus.Pack.csproj",
+  "projectFilePath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Pack/ET.SchoolBus.Pack.csproj",
   "expectedPackageFiles": [
     "/home/ibrahimarac/.nuget/packages/fluentvalidation/11.10.0/fluentvalidation.11.10.0.nupkg.sha512"
   ],

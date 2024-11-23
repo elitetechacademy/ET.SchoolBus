@@ -1,8 +1,10 @@
 
 using ET.SchoolBus.Api.Controllers;
+using ET.SchoolBus.Api.CustomAttributes;
 using ET.SchoolBus.Application.DTOs.Request;
 using ET.SchoolBus.Application.Interfaces;
 using ET.SchoolBus.Application.Services.Interfaces;
+using ET.SchoolBus.Domain.Enumerations;
 using Microsoft.AspNetCore.Mvc;
 
 [Route("model")]
@@ -16,6 +18,7 @@ public class ModelController : ApiController
     }
 
     [HttpGet("get-all")]
+    [Permission(Roles.SuperAdmin, Roles.Admin, Roles.User)]
     public async Task<ActionResult> GetAll()
     {
         var result = await _modelService.GetAllAsync();
@@ -23,6 +26,7 @@ public class ModelController : ApiController
     }
 
     [HttpGet("get-by-id/{id:int}")]
+    [Permission(Roles.SuperAdmin, Roles.Admin, Roles.User)]
     public async Task<ActionResult> GetById(int id)
     {
         var result = await _modelService.GetByIdAsync(id);
@@ -30,6 +34,7 @@ public class ModelController : ApiController
     }
 
     [HttpGet("get-by-brand/{id:int}")]
+    [Permission(Roles.SuperAdmin, Roles.Admin, Roles.User)]
     public async Task<ActionResult> GetByBrandId(int id)
     {
         var result = await _modelService.GetAllByBrandIdAsync(id);
@@ -37,6 +42,7 @@ public class ModelController : ApiController
     }
 
     [HttpPost("create")]
+    [Permission(Roles.SuperAdmin, Roles.Admin)]
     public async Task<ActionResult> Create([FromBody] ModelCreateDto modelCreateDto)
     {
         var result = await _modelService.AddModelAsync(modelCreateDto);
@@ -44,6 +50,7 @@ public class ModelController : ApiController
     }
 
     [HttpPut("update")]
+    [Permission(Roles.SuperAdmin, Roles.Admin)]
     public async Task<ActionResult> Update([FromBody] ModelUpdateDto modelUpdateDto)
     {
         var result = await _modelService.UpdateModelAsync(modelUpdateDto);
@@ -51,6 +58,7 @@ public class ModelController : ApiController
     }
 
     [HttpDelete("delete/{id:int}")]
+    [Permission(Roles.SuperAdmin)]
     public async Task<ActionResult> Delete(int id)
     {
         var result = await _modelService.DeleteModelAsync(id);

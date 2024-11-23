@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w1Pzq5kUi5QCQ1y4/MFWxjyn1KThFL9aKqDtxQSgZZodrtgZjrNxOXjhZTSaCYn/4EtJQrXRvqpF9b1UXMT4kA==",
+  "dgSpecHash": "KcFNQLy4JgNTlbEEUHE0r5ZT8JjV11cxuWLCFlR068T2/O/RdRvphbLjtM/XHvVo/bioFJxHWImmCcJz720OnA==",
   "success": true,
-  "projectFilePath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/9. Hafta/Uygulamalar/ET.SchoolBus/src/ET.SchoolBus.Application/ET.SchoolBus.Application.csproj",
+  "projectFilePath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Application/ET.SchoolBus.Application.csproj",
   "expectedPackageFiles": [
     "/home/ibrahimarac/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/home/ibrahimarac/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",

@@ -46,7 +46,7 @@ public class LoginService : ILoginService
         {
             var encryptedPassword = _cypherService.Encrypte(loginRequest.Password);
             var loginUser = await _unitOfWork.ApplicationUserRepository.GetApplicationUserByUsernameAndPassword(loginRequest.UserName, encryptedPassword);
-            
+
             if (loginUser is null)
             {
                 Result.Failure("Kriterlere uyan kullanıcı bulunamadı.");
@@ -85,9 +85,10 @@ public class LoginService : ILoginService
         //Generate Claims
         var claims = new Claim[]
         {
-            new Claim("UserId", loginUser.UserId.ToString()),
-            new Claim("Role", loginUser.Role.Name),
-            new Claim("Email", loginUser.Email)
+            new Claim(ClaimTypes.NameIdentifier, loginUser.UserId.ToString()),
+            new Claim(ClaimTypes.Role, loginUser.Role.Name),
+            new Claim(ClaimTypes.Email, loginUser.Email),
+            new Claim(ClaimTypes.Name, loginUser.UserName)
         };
 
         var token = new JwtSecurityToken(_configuration["Jwt:Issuer"],
@@ -98,7 +99,8 @@ public class LoginService : ILoginService
 
         string tokenString = new JwtSecurityTokenHandler().WriteToken(token);
 
-        return new TokenInfo{
+        return new TokenInfo
+        {
             ExpireDate = expireDate,
             Token = tokenString
         };

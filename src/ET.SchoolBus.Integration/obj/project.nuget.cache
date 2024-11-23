@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OB+pjJcKQ9p3VZIm3zl6mkkHND4bkd3C92zg79appqIClGbWWxhfffM6xkBNxeWSWhgo1fsReI4uXz984Kw8BA==",
+  "dgSpecHash": "G4ZgvLXlQ9XjqrcPF3ADe+Adx0oYZsc8mpzSahw2OIsq8AwWY5B/iWbLnRtVaww6g70U+7dTi/ui0j7NOyHRsA==",
   "success": true,
-  "projectFilePath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/9. Hafta/Uygulamalar/ET.SchoolBus/src/ET.SchoolBus.Integration/ET.SchoolBus.Integration.csproj",
+  "projectFilePath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Integration/ET.SchoolBus.Integration.csproj",
   "expectedPackageFiles": [
     "/home/ibrahimarac/.nuget/packages/microsoft.extensions.configuration/9.0.0/microsoft.extensions.configuration.9.0.0.nupkg.sha512",
     "/home/ibrahimarac/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.0/microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
