@@ -1370,7 +1370,8 @@
       },
       "ET.SchoolBus.Pack/1.0.0": {
         "dependencies": {
-          "FluentValidation": "11.10.0"
+          "FluentValidation": "11.10.0",
+          "Microsoft.Extensions.DependencyInjection": "9.0.0"
         },
         "runtime": {
           "ET.SchoolBus.Pack.dll": {}

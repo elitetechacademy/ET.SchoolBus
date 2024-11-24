@@ -1,6 +1,9 @@
 using System;
+using System.Linq.Expressions;
 using System.Reflection;
+using ET.SchoolBus.Data.Extensions;
 using ET.SchoolBus.Data.Mappings;
+using ET.SchoolBus.Domain.Common;
 using ET.SchoolBus.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,7 +13,7 @@ public class SchoolBusContext : DbContext
 {
     public SchoolBusContext(DbContextOptions<SchoolBusContext> options) : base(options)
     {
-        
+
     }
 
     public DbSet<Brand> Brands { get; set; }
@@ -31,6 +34,23 @@ public class SchoolBusContext : DbContext
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
+        //QueryFilters
+        //modelBuilder.ApplySoftDeleteFilter<BaseEntity>();
+
+        //Soft delete için query filter ayarlanıyor
+        modelBuilder.Entity<ApplicationUser>().HasQueryFilter(x => x.Status);
+        modelBuilder.Entity<Brand>().HasQueryFilter(x => x.Status);
+        modelBuilder.Entity<Driver>().HasQueryFilter(x => x.Status);
+        modelBuilder.Entity<Hostes>().HasQueryFilter(x => x.Status);
+        modelBuilder.Entity<Model>().HasQueryFilter(x => x.Status);
+        modelBuilder.Entity<Parent>().HasQueryFilter(x => x.Status);
+        modelBuilder.Entity<Profession>().HasQueryFilter(x => x.Status);
+        modelBuilder.Entity<Role>().HasQueryFilter(x => x.Status);
+        modelBuilder.Entity<School>().HasQueryFilter(x => x.Status);
+        modelBuilder.Entity<Student>().HasQueryFilter(x => x.Status);
+        modelBuilder.Entity<StudentParent>().HasQueryFilter(x => x.Status);
+        modelBuilder.Entity<Vehicle>().HasQueryFilter(x => x.Status);
+        
         base.OnModelCreating(modelBuilder);
     }
 }

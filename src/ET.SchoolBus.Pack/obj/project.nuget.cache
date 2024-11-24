@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "4aSsrx9RVDkFR20Q7N82fpfhpnBZ0dw780Jae8gOTHywuQWihMU8Y8Uwub51roLWOen/ftW2kM4GNO6DatijKw==",
+  "dgSpecHash": "zmCNUaCD/EvVsdGCv4+RcNj2G8uTqUn9ymsYKpvfpjPvJnWpgr69jiDQnI6ejcaGpIeFRkh+R9Aq3p44T0B8IA==",
   "success": true,
   "projectFilePath": "/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Pack/ET.SchoolBus.Pack.csproj",
   "expectedPackageFiles": [
-    "/home/ibrahimarac/.nuget/packages/fluentvalidation/11.10.0/fluentvalidation.11.10.0.nupkg.sha512"
+    "/home/ibrahimarac/.nuget/packages/fluentvalidation/11.10.0/fluentvalidation.11.10.0.nupkg.sha512",
+    "/home/ibrahimarac/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.0/microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
+    "/home/ibrahimarac/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.0/microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512"
   ],
   "logs": []
 }

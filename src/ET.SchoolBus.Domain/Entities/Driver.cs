@@ -6,6 +6,7 @@ namespace ET.SchoolBus.Domain.Entities;
 //Child
 public class Driver : BaseEntity, ITenantEntity
 {
+    public int SeasonId { get; set; }
     public int DriverId { get; set; } //Primary Key
     public int VehicleId { get; set; } //Foreign Key
     public int SchoolId { get;set; } //Foreign Key
@@ -17,4 +18,5 @@ public class Driver : BaseEntity, ITenantEntity
 
     public Vehicle Vehicle { get; set; } //one to one
     public School School { get; set; } //one to many
+    public Season Season { get; set; } //one to many
 }

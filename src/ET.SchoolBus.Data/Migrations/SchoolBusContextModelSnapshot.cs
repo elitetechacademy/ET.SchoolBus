@@ -153,89 +153,6 @@ namespace ET.SchoolBus.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(255)")
                         .HasColumnName("Address")
-                        .HasColumnOrder(6);
-
-                    b.Property<DateTime>("CreatedTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("CreatedTime")
-                        .HasColumnOrder(12);
-
-                    b.Property<string>("CreatedUser")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("CreatedUser")
-                        .HasColumnOrder(11);
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("Email")
-                        .HasColumnOrder(7);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(30)")
-                        .HasColumnName("Name")
-                        .HasColumnOrder(3);
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(13)")
-                        .HasColumnName("PhoneNumber")
-                        .HasColumnOrder(5);
-
-                    b.Property<int>("SchoolId")
-                        .HasColumnType("int")
-                        .HasColumnName("SchoolId")
-                        .HasColumnOrder(2);
-
-                    b.Property<bool>("Status")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasColumnName("IsActive")
-                        .HasColumnOrder(15)
-                        .HasDefaultValueSql("1");
-
-                    b.Property<string>("Surname")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(30)")
-                        .HasColumnName("Surname")
-                        .HasColumnOrder(4);
-
-                    b.Property<DateTime?>("UpdatedTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("UpdatedTime")
-                        .HasColumnOrder(14);
-
-                    b.Property<string>("UpdatedUser")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("UpdatedUser")
-                        .HasColumnOrder(13);
-
-                    b.Property<int>("VehicleId")
-                        .HasColumnType("int");
-
-                    b.HasKey("DriverId");
-
-                    b.HasIndex("SchoolId");
-
-                    b.ToTable("Drives", (string)null);
-                });
-
-            modelBuilder.Entity("ET.SchoolBus.Domain.Entities.Hostes", b =>
-                {
-                    b.Property<int>("HostesId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("HostesId")
-                        .HasColumnOrder(1);
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HostesId"));
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("Address")
                         .HasColumnOrder(7);
 
                     b.Property<DateTime>("CreatedTime")
@@ -270,6 +187,10 @@ namespace ET.SchoolBus.Data.Migrations
                     b.Property<int>("SchoolId")
                         .HasColumnType("int")
                         .HasColumnName("SchoolId")
+                        .HasColumnOrder(3);
+
+                    b.Property<int>("SeasonId")
+                        .HasColumnType("int")
                         .HasColumnOrder(2);
 
                     b.Property<bool>("Status")
@@ -296,13 +217,104 @@ namespace ET.SchoolBus.Data.Migrations
                         .HasColumnOrder(13);
 
                     b.Property<int>("VehicleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DriverId");
+
+                    b.HasIndex("SchoolId");
+
+                    b.HasIndex("SeasonId");
+
+                    b.ToTable("Drivers", (string)null);
+                });
+
+            modelBuilder.Entity("ET.SchoolBus.Domain.Entities.Hostes", b =>
+                {
+                    b.Property<int>("HostesId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("HostesId")
+                        .HasColumnOrder(1);
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HostesId"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("Address")
+                        .HasColumnOrder(8);
+
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedTime")
+                        .HasColumnOrder(12);
+
+                    b.Property<string>("CreatedUser")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("CreatedUser")
+                        .HasColumnOrder(11);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("Email")
+                        .HasColumnOrder(9);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)")
+                        .HasColumnName("Name")
+                        .HasColumnOrder(5);
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(13)")
+                        .HasColumnName("PhoneNumber")
+                        .HasColumnOrder(7);
+
+                    b.Property<int>("SchoolId")
+                        .HasColumnType("int")
+                        .HasColumnName("SchoolId")
+                        .HasColumnOrder(3);
+
+                    b.Property<int>("SeasonId")
+                        .HasColumnType("int")
+                        .HasColumnOrder(2);
+
+                    b.Property<bool>("Status")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasColumnName("IsActive")
+                        .HasColumnOrder(15)
+                        .HasDefaultValueSql("1");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)")
+                        .HasColumnName("Surname")
+                        .HasColumnOrder(6);
+
+                    b.Property<DateTime?>("UpdatedTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedTime")
+                        .HasColumnOrder(14);
+
+                    b.Property<string>("UpdatedUser")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("UpdatedUser")
+                        .HasColumnOrder(13);
+
+                    b.Property<int>("VehicleId")
                         .HasColumnType("int")
                         .HasColumnName("VehicleId")
-                        .HasColumnOrder(3);
+                        .HasColumnOrder(4);
 
                     b.HasKey("HostesId");
 
                     b.HasIndex("SchoolId");
+
+                    b.HasIndex("SeasonId");
 
                     b.ToTable("Hostesses", (string)null);
                 });
@@ -385,29 +397,33 @@ namespace ET.SchoolBus.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("Email")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(8);
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(30)")
                         .HasColumnName("Name")
-                        .HasColumnOrder(4);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(13)")
                         .HasColumnName("PhoneNumber")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(7);
 
                     b.Property<int>("ProfessionId")
                         .HasColumnType("int")
                         .HasColumnName("ProfessionId")
-                        .HasColumnOrder(2);
+                        .HasColumnOrder(3);
 
                     b.Property<int>("SchoolId")
                         .HasColumnType("int")
                         .HasColumnName("SchoolId")
-                        .HasColumnOrder(3);
+                        .HasColumnOrder(4);
+
+                    b.Property<int>("SeasonId")
+                        .HasColumnType("int")
+                        .HasColumnOrder(2);
 
                     b.Property<bool>("Status")
                         .ValueGeneratedOnAdd()
@@ -420,7 +436,7 @@ namespace ET.SchoolBus.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(30)")
                         .HasColumnName("Surname")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(6);
 
                     b.Property<DateTime?>("UpdatedTime")
                         .HasColumnType("datetime2")
@@ -435,6 +451,8 @@ namespace ET.SchoolBus.Data.Migrations
                     b.HasKey("ParentId");
 
                     b.HasIndex("SchoolId");
+
+                    b.HasIndex("SeasonId");
 
                     b.ToTable("Parents", (string)null);
                 });
@@ -599,6 +617,53 @@ namespace ET.SchoolBus.Data.Migrations
                     b.ToTable("Schools", (string)null);
                 });
 
+            modelBuilder.Entity("ET.SchoolBus.Domain.Entities.Season", b =>
+                {
+                    b.Property<int>("SeasonId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnOrder(1);
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SeasonId"));
+
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedTime")
+                        .HasColumnOrder(12);
+
+                    b.Property<string>("CreatedUser")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("CreatedUser")
+                        .HasColumnOrder(11);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnOrder(2);
+
+                    b.Property<bool>("Status")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasColumnName("IsActive")
+                        .HasColumnOrder(15)
+                        .HasDefaultValueSql("1");
+
+                    b.Property<DateTime?>("UpdatedTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedTime")
+                        .HasColumnOrder(14);
+
+                    b.Property<string>("UpdatedUser")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("UpdatedUser")
+                        .HasColumnOrder(13);
+
+                    b.HasKey("SeasonId");
+
+                    b.ToTable("Seasons", (string)null);
+                });
+
             modelBuilder.Entity("ET.SchoolBus.Domain.Entities.Student", b =>
                 {
                     b.Property<int>("StudentId")
@@ -621,18 +686,22 @@ namespace ET.SchoolBus.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nchar(11)")
                         .HasColumnName("IdentityNumber")
-                        .HasColumnOrder(4);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(30)")
                         .HasColumnName("Name")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(6);
 
                     b.Property<int>("SchoolId")
                         .HasColumnType("int")
                         .HasColumnName("SchoolId")
-                        .HasColumnOrder(3);
+                        .HasColumnOrder(4);
+
+                    b.Property<int>("SeasonId")
+                        .HasColumnType("int")
+                        .HasColumnOrder(2);
 
                     b.Property<bool>("Status")
                         .ValueGeneratedOnAdd()
@@ -645,12 +714,12 @@ namespace ET.SchoolBus.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(30)")
                         .HasColumnName("Surname")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(7);
 
                     b.Property<double>("TotalPrice")
                         .HasColumnType("float")
                         .HasColumnName("TotalPrice")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(8);
 
                     b.Property<DateTime?>("UpdatedTime")
                         .HasColumnType("datetime2")
@@ -665,11 +734,13 @@ namespace ET.SchoolBus.Data.Migrations
                     b.Property<int>("VehicleId")
                         .HasColumnType("int")
                         .HasColumnName("VehicleId")
-                        .HasColumnOrder(2);
+                        .HasColumnOrder(3);
 
                     b.HasKey("StudentId");
 
                     b.HasIndex("SchoolId");
+
+                    b.HasIndex("SeasonId");
 
                     b.ToTable("Students", (string)null);
                 });
@@ -731,12 +802,12 @@ namespace ET.SchoolBus.Data.Migrations
                     b.Property<int>("BrandId")
                         .HasColumnType("int")
                         .HasColumnName("BrandId")
-                        .HasColumnOrder(3);
+                        .HasColumnOrder(4);
 
                     b.Property<int>("Capacity")
                         .HasColumnType("int")
                         .HasColumnName("Capacity")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(6);
 
                     b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime2")
@@ -752,12 +823,12 @@ namespace ET.SchoolBus.Data.Migrations
                     b.Property<int>("ModelId")
                         .HasColumnType("int")
                         .HasColumnName("ModelId")
-                        .HasColumnOrder(4);
+                        .HasColumnOrder(5);
 
                     b.Property<int>("ModelYear")
                         .HasColumnType("int")
                         .HasColumnName("ModelYear")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Plaque")
                         .IsRequired()
@@ -766,6 +837,10 @@ namespace ET.SchoolBus.Data.Migrations
                     b.Property<int>("SchoolId")
                         .HasColumnType("int")
                         .HasColumnName("SchoolId")
+                        .HasColumnOrder(3);
+
+                    b.Property<int>("SeasonId")
+                        .HasColumnType("int")
                         .HasColumnOrder(2);
 
                     b.Property<bool>("Status")
@@ -792,6 +867,8 @@ namespace ET.SchoolBus.Data.Migrations
                     b.HasIndex("ModelId");
 
                     b.HasIndex("SchoolId");
+
+                    b.HasIndex("SeasonId");
 
                     b.ToTable("Vehicles", (string)null);
                 });
@@ -821,7 +898,15 @@ namespace ET.SchoolBus.Data.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("ET.SchoolBus.Domain.Entities.Season", "Season")
+                        .WithMany("Drivers")
+                        .HasForeignKey("SeasonId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
                     b.Navigation("School");
+
+                    b.Navigation("Season");
 
                     b.Navigation("Vehicle");
                 });
@@ -834,7 +919,15 @@ namespace ET.SchoolBus.Data.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("ET.SchoolBus.Domain.Entities.Season", "Season")
+                        .WithMany("Hosteses")
+                        .HasForeignKey("SeasonId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
                     b.Navigation("School");
+
+                    b.Navigation("Season");
                 });
 
             modelBuilder.Entity("ET.SchoolBus.Domain.Entities.Model", b =>
@@ -862,9 +955,17 @@ namespace ET.SchoolBus.Data.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("ET.SchoolBus.Domain.Entities.Season", "Season")
+                        .WithMany("Parents")
+                        .HasForeignKey("SeasonId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
                     b.Navigation("Profession");
 
                     b.Navigation("School");
+
+                    b.Navigation("Season");
                 });
 
             modelBuilder.Entity("ET.SchoolBus.Domain.Entities.Student", b =>
@@ -875,6 +976,12 @@ namespace ET.SchoolBus.Data.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("ET.SchoolBus.Domain.Entities.Season", "Season")
+                        .WithMany("Students")
+                        .HasForeignKey("SeasonId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
                     b.HasOne("ET.SchoolBus.Domain.Entities.Vehicle", "Vehicle")
                         .WithMany("Students")
                         .HasForeignKey("StudentId")
@@ -882,6 +989,8 @@ namespace ET.SchoolBus.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("School");
+
+                    b.Navigation("Season");
 
                     b.Navigation("Vehicle");
                 });
@@ -925,6 +1034,12 @@ namespace ET.SchoolBus.Data.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("ET.SchoolBus.Domain.Entities.Season", "Season")
+                        .WithMany("Vehicles")
+                        .HasForeignKey("SeasonId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
                     b.HasOne("ET.SchoolBus.Domain.Entities.Hostes", "Hostes")
                         .WithOne("Vehicle")
                         .HasForeignKey("ET.SchoolBus.Domain.Entities.Vehicle", "VehicleId")
@@ -938,6 +1053,8 @@ namespace ET.SchoolBus.Data.Migrations
                     b.Navigation("Model");
 
                     b.Navigation("School");
+
+                    b.Navigation("Season");
                 });
 
             modelBuilder.Entity("ET.SchoolBus.Domain.Entities.Brand", b =>
@@ -974,6 +1091,19 @@ namespace ET.SchoolBus.Data.Migrations
                 });
 
             modelBuilder.Entity("ET.SchoolBus.Domain.Entities.School", b =>
+                {
+                    b.Navigation("Drivers");
+
+                    b.Navigation("Hosteses");
+
+                    b.Navigation("Parents");
+
+                    b.Navigation("Students");
+
+                    b.Navigation("Vehicles");
+                });
+
+            modelBuilder.Entity("ET.SchoolBus.Domain.Entities.Season", b =>
                 {
                     b.Navigation("Drivers");
 

@@ -16,38 +16,41 @@ public class HostesMapping : BaseMapping<Hostes>
         .HasColumnName("HostesId")
         .HasColumnOrder(1);
 
+        builder.Property(x => x.SeasonId)
+        .HasColumnOrder(2);
+
         builder.Property(x => x.SchoolId)
         .HasColumnName("SchoolId")
-        .HasColumnOrder(2);
+        .HasColumnOrder(3);
 
         builder.Property(x => x.VehicleId)
         .HasColumnName("VehicleId")
-        .HasColumnOrder(3);
+        .HasColumnOrder(4);
 
         builder.Property(x => x.Name)
         .HasColumnName("Name")
         .HasColumnType("nvarchar(30)")
-        .HasColumnOrder(4);
+        .HasColumnOrder(5);
 
         builder.Property(x => x.Surname)
         .HasColumnName("Surname")
         .HasColumnType("nvarchar(30)")
-        .HasColumnOrder(5);
+        .HasColumnOrder(6);
 
         builder.Property(x => x.PhoneNumber)
         .HasColumnName("PhoneNumber")
         .HasColumnType("nvarchar(13)")
-        .HasColumnOrder(6);
+        .HasColumnOrder(7);
 
         builder.Property(x => x.Address)
         .HasColumnName("Address")
         .HasColumnType("nvarchar(255)")
-        .HasColumnOrder(7);
+        .HasColumnOrder(8);
 
         builder.Property(x => x.Email)
         .HasColumnName("Email")
         .HasColumnType("nvarchar(100)")
-        .HasColumnOrder(8);
+        .HasColumnOrder(9);
 
         builder.HasOne(x => x.Vehicle)
         .WithOne(x => x.Hostes)
@@ -57,6 +60,11 @@ public class HostesMapping : BaseMapping<Hostes>
         builder.HasOne(x => x.School)
         .WithMany(x => x.Hosteses)
         .HasForeignKey(x => x.SchoolId)
+        .OnDelete(DeleteBehavior.NoAction);
+
+        builder.HasOne(x => x.Season)
+        .WithMany(x => x.Hosteses)
+        .HasForeignKey(x => x.SeasonId)
         .OnDelete(DeleteBehavior.NoAction);
 
         builder.ToTable("Hostesses");

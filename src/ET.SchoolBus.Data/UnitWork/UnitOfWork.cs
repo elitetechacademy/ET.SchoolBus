@@ -2,6 +2,7 @@ using ET.SchoolBus.Data.Context;
 using ET.SchoolBus.Data.Repositories.Implementations;
 using ET.SchoolBus.Data.Repositories.Interfaces;
 using ET.SchoolBus.Domain.Common;
+using ET.SchoolBus.Pack.AppContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
@@ -12,6 +13,8 @@ public class UnitOfWork : IUnitOfWork
     private bool disposed = false;
     private readonly SchoolBusContext _schoolBusContext;
 
+    private readonly ApplicationUserContext _applicationUserContext;
+
     #region Repository Instances
     private IBrandRepository _brandRepository;
     private IModelRepository _modelRepository;
@@ -19,9 +22,10 @@ public class UnitOfWork : IUnitOfWork
 
     #endregion
 
-    public UnitOfWork(SchoolBusContext schoolBusContext)
+    public UnitOfWork(SchoolBusContext schoolBusContext, ApplicationUserContext applicationUserContext)
     {
         _schoolBusContext = schoolBusContext;
+        _applicationUserContext = applicationUserContext;
     }
 
     #region Repository Init
@@ -71,17 +75,17 @@ public class UnitOfWork : IUnitOfWork
             {
                 case EntityState.Added:
                     entry.Entity.CreatedTime = DateTime.Now;
-                    entry.Entity.CreatedUser = "admin";
+                    entry.Entity.CreatedUser = _applicationUserContext.Username ?? "admin";
                     entry.Entity.Status = true;
                     break;
                 case EntityState.Deleted:
                     entry.Entity.UpdatedTime = DateTime.Now;
-                    entry.Entity.UpdatedUser = "admin";
+                    entry.Entity.UpdatedUser = _applicationUserContext.Username ?? "admin";
                     entry.Entity.Status = false;
                     break;
                 case EntityState.Modified:
                     entry.Entity.UpdatedTime = DateTime.Now;
-                    entry.Entity.UpdatedUser = "admin";
+                    entry.Entity.UpdatedUser = _applicationUserContext.Username ?? "admin";
                     break;
                 default:
                     break;

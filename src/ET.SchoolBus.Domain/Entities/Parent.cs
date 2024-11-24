@@ -5,6 +5,7 @@ namespace ET.SchoolBus.Domain.Entities;
  
 public class Parent : BaseEntity, ITenantEntity
 {
+    public int SeasonId { get; set; }
     public int ParentId { get; set; } //Primary Key
     public int ProfessionId { get; set; } //Foreign Key
     public int SchoolId { get; set; } //Foreign Key
@@ -16,4 +17,5 @@ public class Parent : BaseEntity, ITenantEntity
     public Profession Profession { get; set; }
     public School School { get; set; }
     public ICollection<StudentParent> StudentParents { get; set; }
+    public Season Season { get; set; }
 }

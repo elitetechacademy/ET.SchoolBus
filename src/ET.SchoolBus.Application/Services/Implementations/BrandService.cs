@@ -8,7 +8,7 @@ using ET.SchoolBus.Application.Wrapper;
 using ET.SchoolBus.Data.Repositories.Interfaces;
 using ET.SchoolBus.Data.UnitWork;
 using ET.SchoolBus.Domain.Entities;
-
+using ET.SchoolBus.Pack.AppContext;
 using ET.SchoolBus.Pack.Extensions;
 using Microsoft.Extensions.Logging;
 
@@ -33,7 +33,7 @@ public class BrandService : IBrandService
     public async Task<Result<List<BrandDto>>> GetAllAsync()
     {
         try
-        {
+        {            
             var brandEntities = await _unitWork.BrandRepository.GetAllAsync();
             var brandDtos = _mapper.Map<List<BrandDto>>(brandEntities);
             return Result<List<BrandDto>>.Success(brandDtos);

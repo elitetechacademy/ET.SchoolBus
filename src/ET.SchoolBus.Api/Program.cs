@@ -1,10 +1,11 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Extensions.DependencyInjection;
+
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using ET.SchoolBus.Data;
 using ET.SchoolBus.Application;
 using ET.SchoolBus.Api.Configurations;
+using ET.SchoolBus.Pack;
+using ET.SchoolBus.Pack.AppContext;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -39,6 +40,9 @@ builder.Services.AddApplicationServices();
 //Integration Layer
 builder.Services.AddIntegrationServices();
 
+//Pack Layer
+builder.Services.AddPackServices();
+
 var app = builder.Build();
 
 //Middlewares
@@ -51,6 +55,13 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.Use(async(context, next)=>{
+    var applicationContext = context.RequestServices   
+        .GetRequiredService<ApplicationUserContext>();
+    applicationContext.CurrentUser = context.User;
+    await next();
+});
 
 app.MapControllers();
 

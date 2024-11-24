@@ -5,6 +5,6 @@ namespace ET.SchoolBus.Domain.Common;
 
 public interface ITenantEntity
 {
-    int SchoolId { get; set; }
-    School School { get; set; }
+    int SeasonId { get; set; }
+    Season Season { get; set; }
 }
