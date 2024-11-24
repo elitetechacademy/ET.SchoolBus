@@ -16,5 +16,6 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IBrandService, BrandService>();
         services.AddScoped<IModelService, ModelService>();
         services.AddScoped<ILoginService, LoginService>();
+        services.AddScoped<IProfessionService, ProfessionService>();
     }
 }

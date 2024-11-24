@@ -132,7 +132,7 @@ public class ModelService : IModelService
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"ModelService => Update : Kayıt güncellenirken bir hata oluştu.");
+            _logger.LogError(ex, $"ModelService => UpdateModelAsync : Kayıt güncellenirken bir hata oluştu.");
             return Result.Failure($"Model güncellenirken bir hata oluştu.");
         }
     }
@@ -145,19 +145,15 @@ public class ModelService : IModelService
             return Result.Failure($"{modelId} nolu marka bulunamadı.");
         }
 
-        existsModel.Status = false;
-        existsModel.UpdatedTime = DateTime.Now;
-        existsModel.UpdatedUser = "admin";
-
         try
         {
-            _unitWork.ModelRepository.Update(existsModel);
+            await _unitWork.ModelRepository.DeleteAsync(modelId);
             var isOk = await _unitWork.Commit();
             return Result.Success($"{modelId} nolu kayıt başarıyla silindi.");
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"ModelService => Update : Kayıt silinirken bir hata oluştu.");
+            _logger.LogError(ex, $"ModelService => DeleteModelAsync : Kayıt silinirken bir hata oluştu.");
             return Result.Failure($"Model silinemedi.");
         }
     }    

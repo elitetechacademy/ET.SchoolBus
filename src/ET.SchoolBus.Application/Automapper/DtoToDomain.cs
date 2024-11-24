@@ -26,5 +26,9 @@ public class DtoToDomain : Profile
         CreateMap<ModelUpdateDto, Model>()
             .ForMember(model => model.ModelName, 
                 y=> y.MapFrom(dto => dto.ModelName.ToUpperByCulture(Culture.TR)));
+        
+        CreateMap<ProfessionCreateDto, Profession>()
+            .ForMember(model => model.Name, 
+                y=> y.MapFrom(dto => dto.Name.ToUpperByCulture(Culture.TR)));
     }
 }

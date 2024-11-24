@@ -83,7 +83,7 @@ public class BrandService : IBrandService
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"BrandService => Create : Kayıt eklenirken bir hata oluştu.");
+            _logger.LogError(ex, $"BrandService => AddBrandAsync : Kayıt eklenirken bir hata oluştu.");
             return Result.Failure($"Kayıt eklenirken bir hata oluştu.");
         }
     }
@@ -108,7 +108,7 @@ public class BrandService : IBrandService
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"BrandService => Update : Kayıt güncellenirken bir hata oluştu.");
+            _logger.LogError(ex, $"BrandService => UpdateBrandAsync : Kayıt güncellenirken bir hata oluştu.");
             return Result.Failure($"Marka güncellenirken bir hata oluştu.");
         }
     }
@@ -121,19 +121,15 @@ public class BrandService : IBrandService
             return Result.Failure($"{brandId} nolu marka bulunamadı.");
         }
 
-        existsBrand.Status = false;
-        existsBrand.UpdatedTime = DateTime.Now;
-        existsBrand.UpdatedUser = "admin";
-
         try
         {
-            _unitWork.BrandRepository.Update(existsBrand);
+            await _unitWork.BrandRepository.DeleteAsync(brandId);
             var isOk = await _unitWork.Commit();
             return Result.Success($"{brandId} nolu kayıt başarıyla silindi.");
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"BrandService => Update : Kayıt silinirken bir hata oluştu.");
+            _logger.LogError(ex, $"BrandService => DeleteBrandAsync : Kayıt silinirken bir hata oluştu.");
             return Result.Failure($"Kayıt güncellenirken bir hata oluştu.");
         }
     }

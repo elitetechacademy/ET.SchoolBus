@@ -16,7 +16,7 @@ public class UserController : ApiController
     }
 
     [HttpPost("sign-in")]
-    public async Task<ActionResult> SignIn(LoginRequestDto loginRequest)
+    public async Task<ActionResult> SignIn([FromBody]LoginRequestDto loginRequest)
     {
         return CustomResponse(await _loginService.SignIn(loginRequest));
     }

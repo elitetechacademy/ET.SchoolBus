@@ -23,7 +23,7 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity>
 
     public async Task<List<TEntity>> GetAllAsync()
     {
-        return await DbSet.Where(x => x.Status).ToListAsync();
+        return await DbSet.ToListAsync();
     }
 
     public async Task<TEntity> GetByIdAsync(int id)

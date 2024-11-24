@@ -21,5 +21,6 @@ public static class DataServiceRegistration
         services.AddScoped<IBrandRepository, BrandRepository>();
         services.AddScoped<IModelRepository, ModelRepository>();
         services.AddScoped<IApplicationUserRepository, ApplicationUserRepository>();
+        services.AddScoped<IProfessionRepository, ProfessionRepository>();
     }
 }
