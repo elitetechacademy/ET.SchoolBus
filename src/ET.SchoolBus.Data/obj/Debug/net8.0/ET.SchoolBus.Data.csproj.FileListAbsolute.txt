@@ -38,3 +38,5 @@
 /media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Data/obj/Debug/net8.0/ET.SchoolBus.Data.pdb
 /media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Data/obj/Debug/net8.0/ET.SchoolBus.Data.genruntimeconfig.cache
 /media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Data/obj/Debug/net8.0/ref/ET.SchoolBus.Data.dll
+/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Data/bin/Debug/net8.0/ET.SchoolBus.Pack.dll
+/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Data/bin/Debug/net8.0/ET.SchoolBus.Pack.pdb

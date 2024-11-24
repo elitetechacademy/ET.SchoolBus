@@ -1,19 +1,16 @@
-using System;
-using System.Linq.Expressions;
 using System.Reflection;
-using ET.SchoolBus.Data.Extensions;
-using ET.SchoolBus.Data.Mappings;
-using ET.SchoolBus.Domain.Common;
 using ET.SchoolBus.Domain.Entities;
+using ET.SchoolBus.Pack.TenantContext;
 using Microsoft.EntityFrameworkCore;
 
 namespace ET.SchoolBus.Data.Context;
 
 public class SchoolBusContext : DbContext
 {
-    public SchoolBusContext(DbContextOptions<SchoolBusContext> options) : base(options)
+    private readonly int seasonId;
+    public SchoolBusContext(DbContextOptions<SchoolBusContext> options, ITenantManagerContext tenantManagerContext) : base(options)
     {
-
+        seasonId = tenantManagerContext.SeasonId;
     }
 
     public DbSet<Brand> Brands { get; set; }
@@ -50,6 +47,14 @@ public class SchoolBusContext : DbContext
         modelBuilder.Entity<Student>().HasQueryFilter(x => x.Status);
         modelBuilder.Entity<StudentParent>().HasQueryFilter(x => x.Status);
         modelBuilder.Entity<Vehicle>().HasQueryFilter(x => x.Status);
+
+        //Tenant işlemi için QueryFilter
+        modelBuilder.Entity<Driver>().HasQueryFilter(x => x.SeasonId == seasonId);
+        modelBuilder.Entity<Hostes>().HasQueryFilter(x => x.SeasonId == seasonId);
+        modelBuilder.Entity<Parent>().HasQueryFilter(x => x.SeasonId == seasonId);
+        modelBuilder.Entity<School>().HasQueryFilter(x => x.SeasonId == seasonId);
+        modelBuilder.Entity<Student>().HasQueryFilter(x => x.SeasonId == seasonId);
+        modelBuilder.Entity<Vehicle>().HasQueryFilter(x => x.SeasonId == seasonId);
         
         base.OnModelCreating(modelBuilder);
     }

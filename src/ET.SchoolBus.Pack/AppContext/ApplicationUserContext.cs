@@ -43,4 +43,16 @@ public class ApplicationUserContext
             return null;                  
         }    
     }
+
+    public int SeasonId
+    {
+        get
+        {
+            int seasonId;
+            var seasonIdResult = int.TryParse(CurrentUser?.Claims?.FirstOrDefault(x =>x.Type == "seasonId")?.Value, out seasonId);
+            if(seasonIdResult)
+                return seasonId;
+            return 1;                  
+        }    
+    }
 }

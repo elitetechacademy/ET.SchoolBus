@@ -13,4 +13,5 @@ public class Season : BaseEntity
     public ICollection<Parent> Parents { get; set; }
     public ICollection<Student> Students { get; set; }
     public ICollection<Vehicle> Vehicles { get; set; }
+    public ICollection<School> Schools { get; set; }
 }

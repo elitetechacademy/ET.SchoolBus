@@ -6,6 +6,7 @@ using ET.SchoolBus.Application;
 using ET.SchoolBus.Api.Configurations;
 using ET.SchoolBus.Pack;
 using ET.SchoolBus.Pack.AppContext;
+using ET.SchoolBus.Api.Middlewares;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -43,6 +44,8 @@ builder.Services.AddIntegrationServices();
 //Pack Layer
 builder.Services.AddPackServices();
 
+builder.Services.AddScoped<SetSeasonMiddleware>();
+
 var app = builder.Build();
 
 //Middlewares
@@ -62,6 +65,9 @@ app.Use(async(context, next)=>{
     applicationContext.CurrentUser = context.User;
     await next();
 });
+
+//Çalışılan tenant bilgisini set etmemiz lazım.
+app.UseMiddleware<SetSeasonMiddleware>();
 
 app.MapControllers();
 

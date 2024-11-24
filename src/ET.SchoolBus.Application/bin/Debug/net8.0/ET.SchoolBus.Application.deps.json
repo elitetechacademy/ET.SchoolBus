@@ -1206,6 +1206,7 @@
         "dependencies": {
           "ET.SchoolBus.Domain": "1.0.0",
           "ET.SchoolBus.Integration": "1.0.0",
+          "ET.SchoolBus.Pack": "1.0.0",
           "Microsoft.AspNetCore": "2.2.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10"
         },

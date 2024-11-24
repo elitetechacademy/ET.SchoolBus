@@ -3,8 +3,9 @@ using ET.SchoolBus.Domain.Common;
 
 namespace ET.SchoolBus.Domain.Entities;
  
-public class School : BaseEntity
+public class School : BaseEntity, ITenantEntity
 {
+    public int SeasonId { get; set; }
     public int SchoolId { get; set; } //Primary Key
     public string SchoolName { get; set; }
     public int StudentCount { get; set; }
@@ -15,4 +16,5 @@ public class School : BaseEntity
     public ICollection<Parent> Parents { get; set; }
     public ICollection<Hostes> Hosteses { get; set; }
     public ICollection<Vehicle> Vehicles { get; set; }
+    public Season Season { get; set; }
 }

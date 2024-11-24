@@ -15,18 +15,21 @@ public class SchoolMapping : BaseMapping<School>
             .HasColumnName("SchoolId")
             .HasColumnOrder(1);
 
+        builder.Property(x => x.SeasonId)
+            .HasColumnOrder(2);
+
             builder.Property(x => x.SchoolName)
             .HasColumnName("SchoolName")
             .HasColumnType("nvarchar(100)")
-            .HasColumnOrder(2);
+            .HasColumnOrder(3);
 
             builder.Property(x => x.StudentCount)
             .HasColumnName("StudentCount")
-            .HasColumnOrder(3);
+            .HasColumnOrder(4);
 
             builder.Property(x => x.StartYear)
             .HasColumnName("StartYear")
-            .HasColumnOrder(4);
+            .HasColumnOrder(5);
 
             builder.ToTable("Schools");
     }
