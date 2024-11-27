@@ -85,9 +85,8 @@ public class UnitOfWork : IUnitOfWork
             switch (entry.State)
             {
                 case EntityState.Added:
-                    entry.Entity.CreatedTime = DateTime.Now;
-                    entry.Entity.CreatedUser = _applicationUserContext.Username ?? "admin";
-                    entry.Entity.Status = true;
+                    SetAddedState(entry.Entity);
+
                     break;
                 case EntityState.Deleted:
                     entry.Entity.UpdatedTime = DateTime.Now;
@@ -95,8 +94,7 @@ public class UnitOfWork : IUnitOfWork
                     entry.Entity.Status = false;
                     break;
                 case EntityState.Modified:
-                    entry.Entity.UpdatedTime = DateTime.Now;
-                    entry.Entity.UpdatedUser = _applicationUserContext.Username ?? "admin";
+                    SetModifiedState(entry.Entity);
                     break;
                 default:
                     break;
@@ -105,6 +103,44 @@ public class UnitOfWork : IUnitOfWork
 
         return await _schoolBusContext.SaveChangesAsync() > 0;
     }
+
+
+    private void SetAddedState(BaseEntity entity)
+    {
+        if (entity is not null)
+            return;
+
+        //BaseEntity için ayarlamalar
+        entity.CreatedTime = DateTime.Now;
+        entity.CreatedUser = _applicationUserContext.Username ?? "admin";
+        entity.Status = true;
+
+        //Tenant için gerekli
+        if(entity is ITenantEntity tenantEntity)
+        {
+            if (tenantEntity is not null)
+                tenantEntity.SeasonId = _applicationUserContext.SeasonId;
+        }        
+    }
+
+    private void SetModifiedState(BaseEntity entity)
+    {
+        if (entity is not null)
+            return;
+
+        //BaseEntity için ayarlamalar
+        entity.UpdatedTime = DateTime.Now;
+        entity.UpdatedUser = _applicationUserContext.Username ?? "admin";
+        entity.Status = true;
+
+        //Tenant için gerekli
+        if(entity is ITenantEntity tenantEntity)
+        {
+            if (tenantEntity is not null)
+                tenantEntity.SeasonId = _applicationUserContext.SeasonId;
+        }        
+    }
+
 
     public void Dispose()
     {

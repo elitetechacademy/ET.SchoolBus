@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ET.SchoolBus.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e096c6d2f52435d2047d4ac6e357c47e50a9d32")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a601b229648e0ce05d04dffa35803e5813dd288c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ET.SchoolBus.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ET.SchoolBus.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

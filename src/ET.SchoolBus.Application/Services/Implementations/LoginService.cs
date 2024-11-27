@@ -52,7 +52,7 @@ public class LoginService : ILoginService
                 Result.Failure("Kriterlere uyan kullanıcı bulunamadı.");
             }
 
-            var tokenInfo = GenerateToken(loginUser, loginRequest.TenantId);
+            var tokenInfo = GenerateToken(loginUser, loginRequest.SeasonId);
 
             var loginResponse = new LoginResponseDto
             {
@@ -74,7 +74,7 @@ public class LoginService : ILoginService
 
     #region Private Methods
 
-    private TokenInfo GenerateToken(ApplicationUser loginUser, int tenantId)
+    private TokenInfo GenerateToken(ApplicationUser loginUser, int seasonId)
     {
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
         var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -89,7 +89,7 @@ public class LoginService : ILoginService
             new Claim(ClaimTypes.Role, loginUser.Role.Name),
             new Claim(ClaimTypes.Email, loginUser.Email),
             new Claim(ClaimTypes.Name, loginUser.UserName),
-            new Claim("seasonId", tenantId.ToString())
+            new Claim("seasonId", seasonId.ToString())
         };
 
         var token = new JwtSecurityToken(_configuration["Jwt:Issuer"],

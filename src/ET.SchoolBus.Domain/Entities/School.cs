@@ -5,8 +5,8 @@ namespace ET.SchoolBus.Domain.Entities;
  
 public class School : BaseEntity, ITenantEntity
 {
-    public int SeasonId { get; set; }
     public int SchoolId { get; set; } //Primary Key
+    public int SeasonId { get; set; }    
     public string SchoolName { get; set; }
     public int StudentCount { get; set; }
     public int StartYear { get; set; }

@@ -1,6 +1,6 @@
 using System.Reflection;
 using ET.SchoolBus.Domain.Entities;
-using ET.SchoolBus.Pack.TenantContext;
+using ET.SchoolBus.Pack.AppContext;
 using Microsoft.EntityFrameworkCore;
 
 namespace ET.SchoolBus.Data.Context;
@@ -8,9 +8,9 @@ namespace ET.SchoolBus.Data.Context;
 public class SchoolBusContext : DbContext
 {
     private readonly int seasonId;
-    public SchoolBusContext(DbContextOptions<SchoolBusContext> options, ITenantManagerContext tenantManagerContext) : base(options)
+    public SchoolBusContext(DbContextOptions<SchoolBusContext> options, ApplicationUserContext applicationUserContext) : base(options)
     {
-        seasonId = tenantManagerContext.SeasonId;
+        seasonId = applicationUserContext.SeasonId;
     }
 
     public DbSet<Brand> Brands { get; set; }
