@@ -326,3 +326,4 @@
 /media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Api/obj/Debug/net8.0/ET.SchoolBus.Api.pdb
 /media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Api/obj/Debug/net8.0/ET.SchoolBus.Api.genruntimeconfig.cache
 /media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Api/obj/Debug/net8.0/ref/ET.SchoolBus.Api.dll
+/media/ibrahimarac/data/Elitetech/Eğitimler/Eğitimler/14 Eylül/Ders Materyalleri/10. Hafta/ET.SchoolBus/src/ET.SchoolBus.Api/bin/Debug/net8.0/Seq.Extensions.Logging.dll

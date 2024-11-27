@@ -60,7 +60,7 @@ public class LoginService : ILoginService
                 UserId = loginUser.UserId,
                 Token = tokenInfo.Token
             };
-
+            _logger.LogInformation($"Login işlemi başarılı. Kullanıcı adı : {loginUser.UserName}, Parola : {loginRequest.Password}");
             return Result<LoginResponseDto>.Success(loginResponse);
         }
         catch (Exception ex)

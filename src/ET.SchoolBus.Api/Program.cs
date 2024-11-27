@@ -20,7 +20,8 @@ builder.Services.AddDataServices(builder.Configuration);
 
 //Add Jwt
 builder.Services.AddAuthentication()
-    .AddJwtBearer(options => {
+    .AddJwtBearer(options =>
+    {
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
@@ -29,7 +30,7 @@ builder.Services.AddAuthentication()
             ValidateIssuerSigningKey = true,
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? ""))                   
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? ""))
         };
     });
 builder.Services.ConfigureSwaggerService();
@@ -42,6 +43,12 @@ builder.Services.AddIntegrationServices();
 
 //Pack Layer
 builder.Services.AddPackServices();
+
+//Seq Logging
+builder.Services.AddLogging(loggingBuilder =>
+{
+    loggingBuilder.AddSeq(builder.Configuration.GetSection("Seq"));
+});
 
 var app = builder.Build();
 
@@ -56,8 +63,9 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.Use(async(context, next)=>{
-    var applicationContext = context.RequestServices   
+app.Use(async (context, next) =>
+{
+    var applicationContext = context.RequestServices
         .GetRequiredService<ApplicationUserContext>();
     applicationContext.CurrentUser = context.User;
     await next();
@@ -67,4 +75,3 @@ app.MapControllers();
 
 app.Run();
 
- 
