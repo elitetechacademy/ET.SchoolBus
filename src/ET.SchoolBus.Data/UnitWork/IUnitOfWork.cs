@@ -10,6 +10,8 @@ public interface IUnitOfWork : IDisposable
     IModelRepository ModelRepository{get;}
     IApplicationUserRepository ApplicationUserRepository{get;}
     IProfessionRepository ProfessionRepository{get;}
+    ISchoolRepository SchoolRepository { get; }
     IDbContextTransaction BeginTransaction();
     Task<bool> Commit();
+
 }

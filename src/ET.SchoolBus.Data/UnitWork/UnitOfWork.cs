@@ -20,6 +20,7 @@ public class UnitOfWork : IUnitOfWork
     private IModelRepository _modelRepository;
     private IApplicationUserRepository _applicationUserRepository;
     private IProfessionRepository _professionRepository;
+    private ISchoolRepository _schoolRepository;
 
     #endregion
 
@@ -71,6 +72,16 @@ public class UnitOfWork : IUnitOfWork
         }
     }
 
+    public ISchoolRepository SchoolRepository
+    {
+        get
+        {
+            if (_schoolRepository is null)
+                _schoolRepository = new SchoolRepository(_schoolBusContext);
+            return _schoolRepository;
+        }
+    }
+
     #endregion
 
     public IDbContextTransaction BeginTransaction()
@@ -107,7 +118,7 @@ public class UnitOfWork : IUnitOfWork
 
     private void SetAddedState(BaseEntity entity)
     {
-        if (entity is not null)
+        if (entity is null)
             return;
 
         //BaseEntity için ayarlamalar
@@ -125,7 +136,7 @@ public class UnitOfWork : IUnitOfWork
 
     private void SetModifiedState(BaseEntity entity)
     {
-        if (entity is not null)
+        if (entity is null)
             return;
 
         //BaseEntity için ayarlamalar
