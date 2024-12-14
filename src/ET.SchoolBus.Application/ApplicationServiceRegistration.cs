@@ -18,5 +18,7 @@ public static class ApplicationServiceRegistration
         services.AddScoped<ILoginService, LoginService>();
         services.AddScoped<IProfessionService, ProfessionService>();
         services.AddScoped<ISchoolService, SchoolService>();
+        services.AddScoped<IParentService, ParentService>();
+        services.AddScoped<ISeasonService, SeasonService>();
     }
 }

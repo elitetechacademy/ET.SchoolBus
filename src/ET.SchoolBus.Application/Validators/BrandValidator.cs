@@ -1,8 +1,8 @@
-using ET.SchoolBus.Application.DTOs.Request;
 using ET.SchoolBus.Data.Repositories.Interfaces;
 using ET.SchoolBus.Pack.Enumerations;
 using FluentValidation;
 using ET.SchoolBus.Pack.Extensions;
+using ET.SchoolBus.Application.DTOs.Request;
 
 namespace ET.SchoolBus.Application.Validators;
 

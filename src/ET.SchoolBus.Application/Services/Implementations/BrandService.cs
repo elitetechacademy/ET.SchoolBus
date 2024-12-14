@@ -98,7 +98,7 @@ public class BrandService : IBrandService
         }
 
         var existsBrand = await _unitWork.BrandRepository.GetByIdAsync(brandUpdateDto.BrandId);
-        _mapper.Map<BrandUpdateDto, Brand>(brandUpdateDto);
+        _mapper.Map<BrandUpdateDto, Brand>(brandUpdateDto , existsBrand);
 
         try
         {

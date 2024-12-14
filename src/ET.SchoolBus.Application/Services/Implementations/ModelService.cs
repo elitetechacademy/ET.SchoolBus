@@ -122,7 +122,7 @@ public class ModelService : IModelService
         }
 
         var existsModel = await _unitWork.ModelRepository.GetByIdAsync(modelUpdateDto.BrandId);
-        _mapper.Map<ModelUpdateDto, Model>(modelUpdateDto);
+        _mapper.Map<ModelUpdateDto, Model>(modelUpdateDto, existsModel);
 
         try
         {

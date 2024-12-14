@@ -25,6 +25,8 @@ public class SchoolBusContext : DbContext
     public DbSet<Vehicle> Vehicles { get; set; }
     public DbSet<ApplicationUser> ApplicationUsers { get; set; }
     public DbSet<Role> Roles { get; set; }
+    public DbSet<Season> Seasons { get; set; }
+    
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -47,6 +49,7 @@ public class SchoolBusContext : DbContext
         modelBuilder.Entity<Student>().HasQueryFilter(x => x.Status);
         modelBuilder.Entity<StudentParent>().HasQueryFilter(x => x.Status);
         modelBuilder.Entity<Vehicle>().HasQueryFilter(x => x.Status);
+        modelBuilder.Entity<Season>().HasQueryFilter(x => x.Status);
 
         //Tenant işlemi için QueryFilter
         modelBuilder.Entity<Driver>().HasQueryFilter(x => x.SeasonId == seasonId);
