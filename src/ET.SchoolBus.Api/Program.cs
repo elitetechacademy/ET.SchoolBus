@@ -45,10 +45,10 @@ builder.Services.AddIntegrationServices();
 builder.Services.AddPackServices();
 
 //Seq Logging
-builder.Services.AddLogging(loggingBuilder =>
-{
-    loggingBuilder.AddSeq(builder.Configuration.GetSection("Seq"));
-});
+// builder.Services.AddLogging(loggingBuilder =>
+// {
+//     loggingBuilder.AddSeq(builder.Configuration.GetSection("Seq"));
+// });
 
 builder.Services.AddCors(options =>
     {
