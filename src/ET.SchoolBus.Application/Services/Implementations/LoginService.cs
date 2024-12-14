@@ -49,7 +49,7 @@ public class LoginService : ILoginService
 
             if (loginUser is null)
             {
-                Result.Failure("Kriterlere uyan kullanıcı bulunamadı.");
+                return Result.Failure("Kriterlere uyan kullanıcı bulunamadı.");
             }
 
             var tokenInfo = GenerateToken(loginUser, loginRequest.SeasonId);

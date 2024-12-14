@@ -50,16 +50,28 @@ builder.Services.AddLogging(loggingBuilder =>
     loggingBuilder.AddSeq(builder.Configuration.GetSection("Seq"));
 });
 
+builder.Services.AddCors(options =>
+    {
+        options.AddPolicy("AllowAll", builder =>
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader());
+    });
+
 var app = builder.Build();
+
+app.UseCors("AllowAll");
 
 //Middlewares
 app.UseRouting();
-if (app.Environment.IsDevelopment())
-{
+
+// if (app.Environment.IsDevelopment())
+// {
     app.UseSwagger();
     app.UseSwaggerUI();
-}
-app.UseHttpsRedirection();
+// }
+
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
