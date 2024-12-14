@@ -20,6 +20,8 @@ public class UnitOfWork : IUnitOfWork
     private IModelRepository _modelRepository;
     private IApplicationUserRepository _applicationUserRepository;
     private IProfessionRepository _professionRepository;
+    private IParentRepository _parentRepository;
+    private ISeasonRepository _seasonRepository;
     private ISchoolRepository _schoolRepository;
 
     #endregion
@@ -69,6 +71,26 @@ public class UnitOfWork : IUnitOfWork
             if (_professionRepository is null)
                 _professionRepository = new ProfessionRepository(_schoolBusContext);
             return _professionRepository;
+        }
+    }
+
+    public IParentRepository ParentRepository
+    {
+        get
+        {
+            if (_parentRepository is null)
+                _parentRepository = new ParentRepository(_schoolBusContext);
+            return _parentRepository;
+        }
+    }
+
+    public ISeasonRepository SeasonRepository
+    {
+        get
+        {
+            if (_seasonRepository is null)
+                _seasonRepository = new SeasonRepository(_schoolBusContext);
+            return _seasonRepository;
         }
     }
 

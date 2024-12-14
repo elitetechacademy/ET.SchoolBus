@@ -31,6 +31,26 @@ public class DtoToDomain : Profile
             .ForMember(model => model.Name, 
                 y=> y.MapFrom(dto => dto.Name.ToUpperByCulture(Culture.TR)));
 
+        CreateMap<ParentCreateDto, Parent>()
+               .ForMember(model => model.Name,
+                   y => y.MapFrom(dto => dto.Name.ToUpperByCulture(Culture.TR)))
+               .ForMember(model => model.Surname,
+                   y => y.MapFrom(dto => dto.Surname.ToUpperByCulture(Culture.TR)));
+
+        CreateMap<ParentUpdateDto, Parent>()
+            .ForMember(model => model.Name,
+                y => y.MapFrom(dto => dto.Name.ToUpperByCulture(Culture.TR)))
+            .ForMember(model => model.Surname,
+                y => y.MapFrom(dto => dto.Surname.ToUpperByCulture(Culture.TR)));
+
+        CreateMap<SeasonCreateDto, Season>()
+        .ForMember(model => model.Name,
+            y => y.MapFrom(dto => dto.Name.ToUpperByCulture(Culture.TR)));
+
+        CreateMap<SeasonUpdateDto, Season>()
+            .ForMember(model => model.Name,
+                y => y.MapFrom(dto => dto.Name.ToUpperByCulture(Culture.TR)));
+
         CreateMap<SchoolCreateDto, School>()
          .ForMember(model => model.SchoolName,
              y => y.MapFrom(dto => dto.SchoolName.ToUpperByCulture(Culture.TR)));

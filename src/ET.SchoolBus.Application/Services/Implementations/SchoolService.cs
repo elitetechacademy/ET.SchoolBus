@@ -96,7 +96,7 @@ public class SchoolService : ISchoolService
         }
 
         var existsSchool = await _unitWork.SchoolRepository.GetByIdAsync(schoolUpdateDto.SchoolId);
-        _mapper.Map<SchoolUpdateDto, School>(schoolUpdateDto);
+        _mapper.Map<SchoolUpdateDto, School>(schoolUpdateDto, existsSchool);
 
         try
         {
