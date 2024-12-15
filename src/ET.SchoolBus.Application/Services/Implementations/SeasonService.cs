@@ -41,8 +41,8 @@ public class SeasonService : ISeasonService
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"SeasonService => GetAllAsync : Kayıt dilinirken bir hata oluştu.");
-            return Result<List<SeasonDto>>.Failure($"Kayıt güncellenirken bir hata oluştu.");
+            _logger.LogError(ex, $"SeasonService => GetAllAsync : Sezon listesi yüklemedi.");
+            return Result<List<SeasonDto>>.Failure($"Sezon listesi yüklenemedi.");
         }
     }
 
@@ -119,7 +119,7 @@ public class SeasonService : ISeasonService
         var existsSeason = await _unitWork.SeasonRepository.GetByIdAsync(seasonId);
         if (existsSeason is null)
         {
-            return Result.Failure($"{seasonId} nolu Sezon bulunamadı.");
+            return Result.Failure($"{seasonId} nolu sezon bulunamadı.");
         }
 
         try
