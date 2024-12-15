@@ -58,6 +58,7 @@ public class LoginService : ILoginService
             {
                 ExpireDate = tokenInfo.ExpireDate,
                 UserId = loginUser.UserId,
+                RoleId = loginUser.RoleId,
                 Token = tokenInfo.Token
             };
             _logger.LogInformation($"Login işlemi başarılı. Kullanıcı adı : {loginUser.UserName}, Parola : {loginRequest.Password}");

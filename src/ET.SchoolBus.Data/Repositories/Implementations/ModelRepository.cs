@@ -14,6 +14,16 @@ public class ModelRepository : GenericRepository<Model>, IModelRepository
         _schoolBusContext = schoolBusContext;
     }
 
+    public async Task<List<Model>> GetAllWithBrandAsync()
+    {
+        return await _schoolBusContext.Models.Include(x => x.Brand).ToListAsync();
+    }
+
+    public async Task<Model?> GetByIdWithBrandAsync(int id)
+    {
+        return await _schoolBusContext.Models.Include(x => x.Brand).FirstOrDefaultAsync(x => x.ModelId == id);
+    }
+
     public async Task<bool> ModelExistsByNameOnCreate(int brandId, string modelName)
     {
         return await _schoolBusContext.Models.AnyAsync(x => x.BrandId == brandId &&
