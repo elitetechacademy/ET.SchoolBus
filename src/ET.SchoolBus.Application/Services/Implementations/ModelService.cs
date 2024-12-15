@@ -36,7 +36,7 @@ public class ModelService : IModelService
     {
         try
         {
-            var modelEntities = await _unitWork.ModelRepository.GetAllAsync();
+            var modelEntities = await _unitWork.ModelRepository.GetAllWithBrandAsync();
             var modelDtos = _mapper.Map<List<ModelDto>>(modelEntities);
             return Result<List<ModelDto>>.Success(modelDtos);
         }
@@ -51,7 +51,7 @@ public class ModelService : IModelService
     {
         try
         {
-            var modelEntity = await _unitWork.ModelRepository.GetByIdAsync(id);
+            var modelEntity = await _unitWork.ModelRepository.GetByIdWithBrandAsync(id);
 
             if (modelEntity is null)
                 return Result<ModelDto>.Failure($"{id} numaralı kayıt bulunamadı.");
