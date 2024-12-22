@@ -5,6 +5,7 @@ using ET.SchoolBus.Data.UnitWork;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 
 namespace ET.SchoolBus.Data;
@@ -13,8 +14,9 @@ public static class DataServiceRegistration
 {
     public static void AddDataServices(this IServiceCollection services, IConfiguration configuration)
     {
+
         services.AddDbContext<SchoolBusContext>(optionsBuilder =>
-    optionsBuilder.UseSqlServer(configuration.GetConnectionString("SchoolBusConnection")));
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("SchoolBusConnection")));
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         //Repositories

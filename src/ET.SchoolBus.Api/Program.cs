@@ -44,18 +44,13 @@ builder.Services.AddIntegrationServices();
 //Pack Layer
 builder.Services.AddPackServices();
 
-//Seq Logging
-// builder.Services.AddLogging(loggingBuilder =>
-// {
-//     loggingBuilder.AddSeq(builder.Configuration.GetSection("Seq"));
-// });
-
 builder.Services.AddCors(options =>
     {
         options.AddPolicy("AllowAll", builder =>
             builder.AllowAnyOrigin()
                    .AllowAnyMethod()
-                   .AllowAnyHeader());
+                   .AllowAnyHeader()
+                   .WithExposedHeaders("Authorization"));
     });
 
 var app = builder.Build();
@@ -65,23 +60,20 @@ app.UseCors("AllowAll");
 //Middlewares
 app.UseRouting();
 
-// if (app.Environment.IsDevelopment())
-// {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-// }
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.Use(async (context, next) =>
-{
-    var applicationContext = context.RequestServices
-        .GetRequiredService<ApplicationUserContext>();
-    applicationContext.CurrentUser = context.User;
-    await next();
-});
+// app.Use(async (context, next) =>
+// {
+//     var applicationContext = context.RequestServices
+//         .GetRequiredService<ApplicationUserContext>();
+//     applicationContext.CurrentUser = context.User;
+//     await next();
+// });
 
 app.MapControllers();
 
