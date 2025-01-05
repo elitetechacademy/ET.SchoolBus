@@ -35,7 +35,7 @@ public class CreateModelValidator : AbstractValidator<ModelCreateDto>
             }).WithMessage("Bu isimde bir marka zaten kayıtlıdır.")
             .MustAsync(async (model, _) =>
             {
-                return !await _brandRepository.AnyAsync(x => x.BrandId == model.BrandId);
+                return await _brandRepository.AnyAsync(x => x.BrandId == model.BrandId);
             }).WithMessage("Marka bulunamadı.");
 
         RuleFor(x => x.ModelName)
@@ -70,7 +70,7 @@ public class UpdateModelValidator : AbstractValidator<ModelUpdateDto>
             }).WithMessage("Bu isimde bir model zaten kayıtlıdır.")
             .MustAsync(async (model, _) =>
             {
-                return !await _brandRepository.AnyAsync(x => x.BrandId == model.BrandId);
+                return await _brandRepository.AnyAsync(x => x.BrandId == model.BrandId);
             }).WithMessage("Marka bulunamadı.");
         
     }

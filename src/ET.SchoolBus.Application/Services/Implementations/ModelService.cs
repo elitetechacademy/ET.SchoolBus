@@ -121,8 +121,8 @@ public class ModelService : IModelService
             return Result.AddValidationError(validationResult.GetErrorMessages());
         }
 
-        var existsModel = await _unitWork.ModelRepository.GetByIdAsync(modelUpdateDto.BrandId);
-        _mapper.Map<ModelUpdateDto, Model>(modelUpdateDto, existsModel);
+        var existsModel = await _unitWork.ModelRepository.GetByIdAsync(modelUpdateDto.ModelId);
+        _mapper.Map(modelUpdateDto, existsModel);
 
         try
         {
