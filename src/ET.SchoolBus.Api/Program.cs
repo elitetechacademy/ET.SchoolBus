@@ -67,13 +67,13 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-// app.Use(async (context, next) =>
-// {
-//     var applicationContext = context.RequestServices
-//         .GetRequiredService<ApplicationUserContext>();
-//     applicationContext.CurrentUser = context.User;
-//     await next();
-// });
+app.Use(async (context, next) =>
+{
+    var applicationContext = context.RequestServices
+        .GetRequiredService<ApplicationUserContext>();
+    applicationContext.CurrentUser = context.User;
+    await next();
+});
 
 app.MapControllers();
 
